@@ -20,7 +20,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed flex justify-start items-center h-15 w-dvw bg-[#344E41] py-auto px-10 z-30">
+        <nav className="fixed flex justify-start items-center h-15 w-screen bg-[#344E41] py-auto z-30">
             <div className="flex w-1/2 justify-start">
                 <ul className="flex gap-5">
                     {

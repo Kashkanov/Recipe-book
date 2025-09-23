@@ -25,10 +25,9 @@ const Showcase = () => {
         LatestRecipe();
     }, []);
 
-    // TODO: remove unnecessary horizontal scroll
 
     return (
-        <div className="relative flex flex-col items-center w-full max-w-full h-screen mt-15 overflow-x-hidden">
+        <div className="relative flex flex-col items-center bg-[#DAD7CD] w-full h-screen mt-10 overflow-x-hidden">
             <h1 className="text-5xl text-[#344e41] font-bold py-5">Welcome {user.username}</h1>
             {sampRecipes.length > 0 &&
                 (

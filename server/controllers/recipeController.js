@@ -5,6 +5,7 @@ const Recipe = require("../models/Recipe");
 const router = express.Router();
 const api_url = "http://localhost:5050/";
 const authenticateToken = require("../middleware/authenticateToken");
+const {matchRecipe} = require("../services/recipe/recipeMatch");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -84,6 +85,23 @@ router.post("/uploadImage", authenticateToken, upload.single("picture"), async (
     try{
         res.json({url: api_url + "uploads/" + req.file.filename});
     } catch (err) {
+        res.status(500).json({message: err.message});
+    }
+})
+
+// return the most similar recipe based on ingredients
+router.post("/matchRecipe", /*authenticateToken,*/ async (req, res) => {
+    try{
+        console.log(req.body);
+        const allRecipes = await Recipe.find();
+        const ingredients = req.body.ingredients;
+        const scores = matchRecipe(ingredients, allRecipes);
+        if(scores.length > 0)
+            res.status(200).json({message: "Recipe matched", recipe: scores});
+        else
+            res.status(200).json({message: "No recipe matches for now..."});
+    } catch (err) {
+        console.log(err);
         res.status(500).json({message: err.message});
     }
 })

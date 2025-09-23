@@ -1,8 +1,8 @@
-const User = require('../models/user');
+const User = require('../../models/User');
 const bcrypt = require("bcrypt");
 
 const env = require("dotenv");
-const { createSecretToken } = require("../tokenGeneration/generateToken");
+const { createSecretToken } = require("../../tokenGeneration/generateToken");
 
 env.config();
 

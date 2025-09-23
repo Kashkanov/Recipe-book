@@ -1,7 +1,7 @@
 const express = require("express");
 
-const login = require("../controllers/login");
-const createUser = require("../controllers/signup");
+const login = require("../services/auth/login");
+const createUser = require("../services/auth/signup");
 const jwt = require("jsonwebtoken");
 const authenticateToken = require("../middleware/authenticateToken");
 
