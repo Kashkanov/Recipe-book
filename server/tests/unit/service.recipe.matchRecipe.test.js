@@ -1,5 +1,10 @@
+const lemmatizeWord = require('../../services/recipe/recipeMatch.js').lemmatizeWord;
 const isIncluded = require('../../services/recipe/recipeMatch.js').isIncluded;
 const simScore = require('../../services/recipe/recipeMatch.js').simScore;
+
+test('Check lemmatizer', ()=>{
+    expect(lemmatizeWord('Tomatoes')).toBe('tomato')
+})
 
 test('Check detect included ingredient', ()=>{
     expect(isIncluded('tomato', ['tomatoes finely chopped'])).toBe(1)

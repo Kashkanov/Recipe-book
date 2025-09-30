@@ -16,28 +16,34 @@ const Navbar = () => {
         {
             name: "Create",
             link: "/Recipes/add"
+        },
+        {
+            name: "Matchipe",
+            link: "/Matchipe"
         }
     ];
 
     return (
-        <nav className="fixed flex justify-start items-center h-15 w-screen bg-[#344E41] py-auto z-30">
+        <nav className="fixed flex justify-start items-center h-15 w-screen bg-[#344E41] py-auto z-30 px-5">
             <div className="flex w-1/2 justify-start">
-                <ul className="flex gap-5">
-                    {
-                        links.map((item) => {
-                            return (
-                                <li key={item.name}>
-                                    <NavLink
-                                        to={item.link}
-                                        className="font-bold"
-                                    >
-                                        {item.name}
-                                    </NavLink>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
+                {user && (
+                    <ul className="flex gap-5">
+                        {
+                            links.map((item) => {
+                                return (
+                                    <li key={item.name}>
+                                        <NavLink
+                                            to={item.link}
+                                            className="font-bold"
+                                        >
+                                            {item.name}
+                                        </NavLink>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                )}
             </div>
             <div className="flex justify-end w-1/2">
                 {user &&

@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 function authenticateToken(req, res, next) {
     const token = req.cookies.token;
-    console.log("cookies: ", req.cookies);      //<===
+    // console.log("cookies: ", req.cookies);      //<===
     if(!token) return res.sendStatus(401).json({ error: "Unauthorized" });
 
     jwt.verify(token,process.env.TOKEN_KEY, (err, user) => {

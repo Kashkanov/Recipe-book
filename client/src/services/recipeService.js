@@ -58,3 +58,16 @@ export function uploadImage(image) {
         })
         .then((res) => res.json());
 }
+
+export function matchRecipe(ingredients) {
+    return fetch(api_url + "recipes/matchRecipe",
+        {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(ingredients),
+        })
+        .then((res) => res.json());
+}

@@ -2,7 +2,8 @@ const lemmatizer = require('wink-lemmatizer');
 
 function lemmatizeWord(word) {
 
-    const lem = lemmatizer.noun(word);
+    const loWord = word.toLowerCase();
+    const lem = lemmatizer.noun(loWord);
     // console.log(`lemmatized word ${lem}`)
     return lem;
 }
@@ -28,7 +29,6 @@ function simScore(ingredients, recipeIngredients){
     return parseFloat(score.toFixed(2));
 }
 
-
 function matchRecipe(ingredients, recipes) {
 
     const lemmatizedIngredients = ingredients.map(ing => lemmatizeWord(ing));
@@ -45,6 +45,7 @@ function matchRecipe(ingredients, recipes) {
 }
 
 module.exports = {
+    lemmatizeWord,
     isIncluded,
     simScore,
     matchRecipe
