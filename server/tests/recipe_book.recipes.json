@@ -1,0 +1,919 @@
+[{
+  "_id": {
+    "$oid": "68a814f12369bcb5d56931f8"
+  },
+  "title": "Beef Kaldereta",
+  "picture": "/public/recipes/kaldereta.jpg",
+  "prep_time": 20,
+  "cook_time": 75,
+  "description": "A flavorful tomato-based meat stew, usually beef or goat, cooked with liver spread, potatoes, and bell peppers.",
+  "ingredients": [
+    {
+      "quantity": 2,
+      "unit": "lbs",
+      "name": "beef chuck, cubed"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "tomato sauce"
+    },
+    {
+      "quantity": 0.25,
+      "unit": "cup",
+      "name": "liver spread"
+    },
+    {
+      "quantity": 0.5,
+      "unit": "cup",
+      "name": "grated cheese"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "beef broth or water"
+    },
+    {
+      "quantity": 2,
+      "unit": "medium",
+      "name": "potatoes, cubed"
+    },
+    {
+      "quantity": 1,
+      "unit": "medium",
+      "name": "carrot, sliced"
+    },
+    {
+      "quantity": 1,
+      "unit": "",
+      "name": "red bell pepper, sliced"
+    },
+    {
+      "quantity": 1,
+      "unit": "",
+      "name": "green bell pepper, sliced"
+    },
+    {
+      "quantity": 1,
+      "unit": "",
+      "name": "onion, chopped"
+    },
+    {
+      "quantity": 4,
+      "unit": "cloves",
+      "name": "garlic, minced"
+    },
+    {
+      "quantity": 2,
+      "unit": "tablespoons",
+      "name": "cooking oil"
+    },
+    {
+      "quantity": "to taste",
+      "unit": "",
+      "name": "salt and pepper"
+    }
+  ],
+  "steps": [
+    "Heat oil in a pot and sauté garlic and onion until fragrant.",
+    "Add beef cubes and cook until browned.",
+    "Pour in tomato sauce and broth. Cover and simmer for 1 hour or until beef is tender.",
+    "Add liver spread and cheese. Stir until well blended.",
+    "Add potatoes and carrots. Cook until vegetables are tender.",
+    "Add bell peppers and cook for 5 more minutes.",
+    "Season with salt and pepper to taste.",
+    "Serve hot with rice."
+  ],
+  "datetime_added": "2023-10-06T12:00:00Z",
+  "uploader": "jRizz1230"
+},
+{
+  "_id": {
+    "$oid": "68a814f12369bcb5d56931f6"
+  },
+  "title": "Sinigang na Baboy",
+  "picture": "/public/recipes/sinigang-baboy.jpg",
+  "prep_time": 15,
+  "cook_time": 60,
+  "description": "A Filipino soup made with pork belly, tomatoes, and a rich tomato-based sauce. It's a popular main dish in the Philippines and is often served with steamed rice.",
+  "ingredients": [
+    {
+      "quantity": 2,
+      "unit": "lbs",
+      "name": "pork belly or ribs"
+    },
+    {
+      "quantity": 1,
+      "unit": "large",
+      "name": "onion, quartered"
+    },
+    {
+      "quantity": 2,
+      "unit": "medium",
+      "name": "tomatoes, quartered"
+    },
+    {
+      "quantity": 1,
+      "unit": "pack",
+      "name": "sinigang mix (tamarind-based)"
+    },
+    {
+      "quantity": 8,
+      "unit": "cups",
+      "name": "water"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "radish, sliced"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "string beans, cut into 2-inch pieces"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "eggplant, sliced"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "kangkong (water spinach)"
+    },
+    {
+      "quantity": 2,
+      "unit": "pieces",
+      "name": "green chili peppers (optional)"
+    },
+    {
+      "quantity": "to taste",
+      "unit": "",
+      "name": "salt or fish sauce"
+    }
+  ],
+  "steps": [
+    "Boil pork with water in a pot. Skim off scum as it forms.",
+    "Add onions and tomatoes. Let simmer for 30 to 40 minutes or until pork is tender.",
+    "Add sinigang mix and stir well.",
+    "Add radish, eggplant, and string beans. Cook for 5–7 minutes.",
+    "Add green chili and kangkong last. Simmer for another 2–3 minutes.",
+    "Season with salt or fish sauce as needed.",
+    "Serve hot with steamed rice."
+  ],
+  "datetime_added": "2023-10-06T12:00:00Z",
+  "uploader": "karma_kameleon"
+},
+{
+  "_id": {
+    "$oid": "68a814f12369bcb5d56931f7"
+  },
+  "title": "Chicken Adobo",
+  "picture": "/public/recipes/adobo.jpg",
+  "prep_time": 10,
+  "cook_time": 40,
+  "description": "A classic Filipino dish of meat braised in soy sauce, vinegar, garlic, and spices, known for its rich, tangy flavor.",
+  "ingredients": [
+    {
+      "quantity": 2,
+      "unit": "lbs",
+      "name": "chicken, cut into serving pieces"
+    },
+    {
+      "quantity": 0.5,
+      "unit": "cup",
+      "name": "soy sauce"
+    },
+    {
+      "quantity": 0.5,
+      "unit": "cup",
+      "name": "vinegar"
+    },
+    {
+      "quantity": 1,
+      "unit": "head",
+      "name": "garlic, crushed"
+    },
+    {
+      "quantity": 1,
+      "unit": "teaspoon",
+      "name": "whole peppercorns"
+    },
+    {
+      "quantity": 3,
+      "unit": "pieces",
+      "name": "dried bay leaves"
+    },
+    {
+      "quantity": 1,
+      "unit": "tablespoon",
+      "name": "brown sugar"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "water"
+    },
+    {
+      "quantity": "to taste",
+      "unit": "",
+      "name": "salt"
+    }
+  ],
+  "steps": [
+    "Combine chicken, soy sauce, vinegar, garlic, peppercorns, and bay leaves in a pot.",
+    "Let it marinate for at least 30 minutes (optional but recommended).",
+    "Bring to a boil and simmer over low heat for 25 to 30 minutes.",
+    "Add water as needed during simmering.",
+    "Add brown sugar and stir well.",
+    "Continue to simmer until chicken is fully cooked and sauce has thickened.",
+    "Adjust salt to taste.",
+    "Serve with rice. Enjoy!"
+  ],
+  "datetime_added": "2023-10-06T12:00:00Z",
+  "uploader": "kOutis"
+},
+{
+  "_id": {
+    "$oid": "68a814f12369bcb5d56931f9"
+  },
+  "title": "Menudo",
+  "picture": "/public/recipes/menudo.jpg",
+  "prep_time": 15,
+  "cook_time": 45,
+  "description": "A hearty Filipino stew made with pork, liver, potatoes, and carrots simmered in a savory tomato sauce.",
+  "ingredients": [
+    {
+      "quantity": 2,
+      "unit": "lbs",
+      "name": "pork"
+    },
+    {
+      "quantity": 0.25,
+      "unit": "lb",
+      "name": "pig liver"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "potatoes, diced"
+    },
+    {
+      "quantity": 1,
+      "unit": "piece",
+      "name": "carrot, cubed"
+    },
+    {
+      "quantity": 0.5,
+      "unit": "cup",
+      "name": "soy sauce"
+    },
+    {
+      "quantity": 0.5,
+      "unit": "piece",
+      "name": "lemon"
+    },
+    {
+      "quantity": 1,
+      "unit": "piece",
+      "name": "onion, chopped"
+    },
+    {
+      "quantity": 3,
+      "unit": "cloves",
+      "name": "garlic, minced"
+    },
+    {
+      "quantity": 1,
+      "unit": "teaspoon",
+      "name": "sugar"
+    },
+    {
+      "quantity": 0.75,
+      "unit": "cup",
+      "name": "tomato sauce"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "water"
+    },
+    {
+      "quantity": 4,
+      "unit": "pieces",
+      "name": "hotdogs, sliced diagonally"
+    },
+    {
+      "quantity": 2,
+      "unit": "tablespoons",
+      "name": "cooking oil"
+    },
+    {
+      "quantity": "2 to 3",
+      "unit": "pieces",
+      "name": "dried bay leaves"
+    },
+    {
+      "quantity": "to taste",
+      "unit": "",
+      "name": "salt and pepper"
+    }
+  ],
+  "steps": [
+    "Combine pork, soy sauce, and lemon in a bowl. Marinate for at least 1 hour.",
+    "Heat oil in a pan.",
+    "Sauté garlic and onion.",
+    "Add the marinated pork. Cook for 5 to 7 minutes.",
+    "Pour in tomato sauce and water and then add the bay leaves. Let boil and simmer for 30 minutes to an hour depending on the toughness of the pork. Note: Add water as necessary.",
+    "Add-in the liver and hot dogs. Cook for 5 minutes.",
+    "Put-in potatoes, carrots, sugar, salt, and pepper. Stir and cook for 8 to 12 minutes.",
+    "Serve. Share and enjoy!"
+  ],
+  "datetime_added": "2023-10-06T12:00:00Z",
+  "uploader": "fluff06"
+},
+{
+  "_id": {
+    "$oid": "68b016f96b05efcba55b90b6"
+  },
+  "title": "Pancit Canton",
+  "picture": "./public/recipes/pancit-canton.jpg",
+  "prep_time": 20,
+  "cook_time": 30,
+  "description": "A Filipino stir-fried noodle dish with vegetables, meat, and soy-based sauce.",
+  "ingredients": [
+    {
+      "quantity": 2,
+      "unit": "packs",
+      "name": "egg noodles (canton)"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "chicken breast, sliced"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "pork, sliced"
+    },
+    {
+      "quantity": 2,
+      "unit": "pieces",
+      "name": "Chinese sausage, sliced"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "cabbage, shredded"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "carrots, julienned"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "green beans, sliced"
+    },
+    {
+      "quantity": 2,
+      "unit": "tablespoons",
+      "name": "soy sauce"
+    },
+    {
+      "quantity": 1,
+      "unit": "tablespoon",
+      "name": "oyster sauce"
+    },
+    {
+      "quantity": 2,
+      "unit": "cups",
+      "name": "chicken broth"
+    },
+    {
+      "quantity": 4,
+      "unit": "cloves",
+      "name": "garlic, minced"
+    },
+    {
+      "quantity": 1,
+      "unit": "",
+      "name": "onion, chopped"
+    },
+    {
+      "quantity": 2,
+      "unit": "tablespoons",
+      "name": "cooking oil"
+    },
+    {
+      "quantity": "to taste",
+      "unit": "",
+      "name": "salt and pepper"
+    }
+  ],
+  "steps": [
+    "Heat oil in a wok and sauté garlic and onion.",
+    "Add chicken, pork, and Chinese sausage. Cook until lightly browned.",
+    "Add soy sauce, oyster sauce, and chicken broth. Bring to a boil.",
+    "Stir in vegetables and cook for 3 minutes.",
+    "Add noodles and toss until well combined and broth is absorbed.",
+    "Season with salt and pepper to taste.",
+    "Serve hot with calamansi on the side."
+  ],
+  "datetime_added": "2023-10-06T12:00:00Z",
+  "uploader": "cookpinoy"
+},
+{
+  "_id": {
+    "$oid": "68b016f96b05efcba55b90b7"
+  },
+  "title": "Turon",
+  "picture": "./public/recipes/turon.jpg",
+  "prep_time": 15,
+  "cook_time": 15,
+  "description": "A popular Filipino snack of sliced bananas and jackfruit wrapped in spring roll wrapper, fried, and coated with caramelized sugar.",
+  "ingredients": [
+    {
+      "quantity": 6,
+      "unit": "pieces",
+      "name": "saba bananas, sliced lengthwise"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "ripe jackfruit strips"
+    },
+    {
+      "quantity": 12,
+      "unit": "pieces",
+      "name": "spring roll wrappers"
+    },
+    {
+      "quantity": 0.5,
+      "unit": "cup",
+      "name": "brown sugar"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "cooking oil"
+    }
+  ],
+  "steps": [
+    "Place banana slice and jackfruit on a spring roll wrapper.",
+    "Sprinkle with brown sugar and roll tightly, sealing the edge with water.",
+    "Heat oil in a pan and fry turon until golden brown and crisp.",
+    "Sprinkle more sugar while frying to caramelize the wrapper.",
+    "Drain excess oil and serve hot."
+  ],
+  "datetime_added": "2023-10-06T12:00:00Z",
+  "uploader": "merienda_master"
+},
+{
+  "_id": {
+    "$oid": "68b016f96b05efcba55b90b8"
+  },
+  "title": "Arroz Caldo",
+  "picture": "./public/recipes/arroz-caldo.jpg",
+  "prep_time": 10,
+  "cook_time": 45,
+  "description": "A comforting Filipino rice porridge flavored with ginger, garlic, and chicken, often topped with boiled egg and toasted garlic.",
+  "ingredients": [
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "glutinous rice"
+    },
+    {
+      "quantity": 0.5,
+      "unit": "cup",
+      "name": "regular rice"
+    },
+    {
+      "quantity": 1,
+      "unit": "lb",
+      "name": "chicken pieces"
+    },
+    {
+      "quantity": 8,
+      "unit": "cups",
+      "name": "chicken broth"
+    },
+    {
+      "quantity": 1,
+      "unit": "thumb",
+      "name": "ginger, sliced"
+    },
+    {
+      "quantity": 4,
+      "unit": "cloves",
+      "name": "garlic, minced"
+    },
+    {
+      "quantity": 1,
+      "unit": "",
+      "name": "onion, chopped"
+    },
+    {
+      "quantity": 2,
+      "unit": "tablespoons",
+      "name": "fish sauce"
+    },
+    {
+      "quantity": "to serve",
+      "unit": "",
+      "name": "boiled eggs"
+    },
+    {
+      "quantity": "to garnish",
+      "unit": "",
+      "name": "spring onions and toasted garlic"
+    }
+  ],
+  "steps": [
+    "Heat oil in a pot and sauté garlic, onion, and ginger.",
+    "Add chicken and cook until lightly browned.",
+    "Add rice and stir to coat with flavors.",
+    "Pour in chicken broth and bring to a boil.",
+    "Simmer until rice is cooked and porridge-like consistency is achieved.",
+    "Season with fish sauce.",
+    "Serve hot, topped with boiled egg, spring onions, and toasted garlic."
+  ],
+  "datetime_added": "2023-10-06T12:00:00Z",
+  "uploader": "comfort_foods"
+},
+{
+  "_id": {
+    "$oid": "68b016f96b05efcba55b90b9"
+  },
+  "title": "Laing",
+  "picture": "./public/recipes/laing.jpg",
+  "prep_time": 20,
+  "cook_time": 40,
+  "description": "A spicy Filipino dish from Bicol made of dried taro leaves cooked in coconut milk with chili and shrimp paste.",
+  "ingredients": [
+    {
+      "quantity": 4,
+      "unit": "cups",
+      "name": "dried taro leaves"
+    },
+    {
+      "quantity": 2,
+      "unit": "cups",
+      "name": "coconut milk"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "coconut cream"
+    },
+    {
+      "quantity": 0.5,
+      "unit": "cup",
+      "name": "shrimp paste (bagoong alamang)"
+    },
+    {
+      "quantity": 1,
+      "unit": "",
+      "name": "onion, chopped"
+    },
+    {
+      "quantity": 4,
+      "unit": "cloves",
+      "name": "garlic, minced"
+    },
+    {
+      "quantity": 3,
+      "unit": "pieces",
+      "name": "red chili peppers, sliced"
+    },
+    {
+      "quantity": 2,
+      "unit": "tablespoons",
+      "name": "cooking oil"
+    },
+    {
+      "quantity": "to taste",
+      "unit": "",
+      "name": "salt and pepper"
+    }
+  ],
+  "steps": [
+    "Heat oil in a pot and sauté garlic and onion until fragrant.",
+    "Add shrimp paste and chili peppers. Cook for 2 minutes.",
+    "Pour in coconut milk and bring to a simmer.",
+    "Add taro leaves on top (do not stir yet).",
+    "Simmer uncovered until liquid reduces and leaves are tender.",
+    "Add coconut cream and simmer for another 10 minutes.",
+    "Season with salt and pepper.",
+    "Serve with steamed rice."
+  ],
+  "datetime_added": "2023-10-06T12:00:00Z",
+  "uploader": "bicol_spice"
+},
+{
+  "_id": {
+    "$oid": "68b016f96b05efcba55b90ba"
+  },
+  "title": "Kare-Kare",
+  "picture": "./public/recipes/kare-kare.jpg",
+  "prep_time": 30,
+  "cook_time": 90,
+  "description": "A traditional Filipino stew made with peanut sauce, oxtail, and vegetables, served with bagoong (fermented shrimp paste).",
+  "ingredients": [
+    {
+      "quantity": 2,
+      "unit": "lbs",
+      "name": "oxtail, cut into serving pieces"
+    },
+    {
+      "quantity": 1,
+      "unit": "lb",
+      "name": "tripe (optional)"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "peanut butter"
+    },
+    {
+      "quantity": 0.25,
+      "unit": "cup",
+      "name": "ground toasted rice"
+    },
+    {
+      "quantity": 2,
+      "unit": "tablespoons",
+      "name": "annatto seeds (atsuete)"
+    },
+    {
+      "quantity": 2,
+      "unit": "cups",
+      "name": "string beans, cut into 2-inch pieces"
+    },
+    {
+      "quantity": 1,
+      "unit": "bundle",
+      "name": "pechay (bok choy)"
+    },
+    {
+      "quantity": 1,
+      "unit": "piece",
+      "name": "eggplant, sliced"
+    },
+    {
+      "quantity": 2,
+      "unit": "cloves",
+      "name": "garlic, minced"
+    },
+    {
+      "quantity": 1,
+      "unit": "",
+      "name": "onion, chopped"
+    },
+    {
+      "quantity": 2,
+      "unit": "tablespoons",
+      "name": "cooking oil"
+    },
+    {
+      "quantity": 6,
+      "unit": "cups",
+      "name": "water"
+    },
+    {
+      "quantity": "to taste",
+      "unit": "",
+      "name": "salt and pepper"
+    },
+    {
+      "quantity": "to serve",
+      "unit": "",
+      "name": "bagoong (shrimp paste)"
+    }
+  ],
+  "steps": [
+    "Boil oxtail (and tripe if using) in water until tender, skimming scum as it rises.",
+    "In a separate pan, heat oil and sauté garlic and onion.",
+    "Add peanut butter, ground rice, and annatto water (soaked annatto seeds in warm water).",
+    "Pour mixture into the pot of meat. Simmer until sauce thickens.",
+    "Add vegetables and cook until just tender.",
+    "Season with salt and pepper.",
+    "Serve hot with bagoong on the side."
+  ],
+  "datetime_added": "2023-10-06T12:00:00Z",
+  "uploader": "filipino_foodie"
+},
+{
+  "_id": {
+    "$oid": "68b79c9a7768ee051fe107cb"
+  },
+  "title": "Lucky Me Pancit Canton",
+  "picture": "http://localhost:5050/uploads/2025-09-03T014042758Z_lucky-me.jpg",
+  "prep_time": 2,
+  "cook_time": 5,
+  "description": "U kno it boi",
+  "ingredients": [
+    {
+      "quantity": "1",
+      "unit": "pack",
+      "name": "Lucky Me Pancit Canton; flavor of your  choice",
+      "_id": {
+        "$oid": "68b79c9a7768ee051fe107cc"
+      }
+    },
+    {
+      "quantity": "1",
+      "unit": "pc.",
+      "name": "Egg(optional)",
+      "_id": {
+        "$oid": "68b79c9a7768ee051fe107cd"
+      }
+    },
+    {
+      "quantity": "2",
+      "unit": "cups",
+      "name": "Water",
+      "_id": {
+        "$oid": "68b79c9a7768ee051fe107ce"
+      }
+    }
+  ],
+  "steps": [
+    "Add water to a pot",
+    "Open pack and put the noodles and egg in water; Boil for 5 mins",
+    "Strain noodles",
+    "Mix in flavoring additives",
+    "Serve with boiled egg"
+  ],
+  "uploader": "admin",
+  "datetime_added": {
+    "$date": "2025-09-03T01:40:42.823Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d2354a7490d117913607a4"
+  },
+  "title": "sampRecip 1",
+  "picture": "http://localhost:5050/uploads/2025-09-23T055106047Z_eye-of-rah.jpg",
+  "prep_time": 2,
+  "cook_time": 3,
+  "description": "this is a test",
+  "ingredients": [
+    {
+      "quantity": "1",
+      "unit": "pc",
+      "name": "tomato",
+      "_id": {
+        "$oid": "68d2354a7490d117913607a5"
+      }
+    },
+    {
+      "quantity": "2",
+      "unit": "pc",
+      "name": "onions",
+      "_id": {
+        "$oid": "68d2354a7490d117913607a6"
+      }
+    }
+  ],
+  "steps": [
+    "chop tomatie"
+  ],
+  "uploader": "68b7ec9b5b9d75b8411610aa",
+  "datetime_added": {
+    "$date": "2025-09-23T05:51:06.075Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d7ea824b08fa9338275ce1"
+  },
+  "title": "Dinuguan",
+  "picture": "http://localhost:5050/uploads/2025-09-27T134538200Z_dinuguan.png",
+  "prep_time": 10,
+  "cook_time": 50,
+  "description": "A rich and savory Filipino stew made with tender pork simmered in vinegar, garlic, and fresh pork blood. Finished with green chili peppers for a gentle heat, this comforting dish is traditionally served with steamed rice or soft rice cakes.",
+  "ingredients": [
+    {
+      "quantity": "1",
+      "unit": "lb.",
+      "name": "pork shoulder, diced",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275ce2"
+      }
+    },
+    {
+      "quantity": "20",
+      "unit": "oz.",
+      "name": "pork blood",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275ce3"
+      }
+    },
+    {
+      "quantity": "1/2",
+      "unit": "lb.",
+      "name": "pork ears,  boiled and sliced",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275ce4"
+      }
+    },
+    {
+      "quantity": "1",
+      "unit": "cup",
+      "name": "white vinegar",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275ce5"
+      }
+    },
+    {
+      "quantity": "3",
+      "unit": "cups",
+      "name": "beef broth",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275ce6"
+      }
+    },
+    {
+      "quantity": "3",
+      "unit": "pcs.",
+      "name": "dried bay leaves",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275ce7"
+      }
+    },
+    {
+      "quantity": "1",
+      "unit": "bunch",
+      "name": "lemongrass",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275ce8"
+      }
+    },
+    {
+      "quantity": "3",
+      "unit": "pcs.",
+      "name": "long green peppers",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275ce9"
+      }
+    },
+    {
+      "quantity": "1",
+      "unit": "pc.",
+      "name": "onion, chopped",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275cea"
+      }
+    },
+    {
+      "quantity": "5",
+      "unit": "cloves ",
+      "name": "garlic",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275ceb"
+      }
+    },
+    {
+      "quantity": "2",
+      "unit": "tsp.",
+      "name": "sugar",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275cec"
+      }
+    },
+    {
+      "quantity": "3",
+      "unit": "tbsp.",
+      "name": "cooking oil",
+      "_id": {
+        "$oid": "68d7ea824b08fa9338275ced"
+      }
+    }
+  ],
+  "steps": [
+    "Heat oil in a cooking pot. Sauté the garlic and onion.",
+    "Once the onion softens, add the pork kasim. Continue sautéing for 2 to 3 minutes.",
+    "Add the pork ears. Sauté for 2 minutes.",
+    "Pour the vinegar. Cover the pot and then let it boil. Stir.",
+    "Pour the beef broth. Let the liquid boil.",
+    "Add dried bay leaves and lemongrass. Cover the pot and adjust the heat to the lowest setting. Simmer for 50 minutes or until the pork tenderizes completely. Note: Make sure to stir occasionally. You can add water as needed.",
+    "Pour the pork blood into the pot. Stir. Let the mixture boil and then simmer for 12 minutes.",
+    "Add the long green pepper. Continue cooking for 3 minutes.",
+    "Season with sugar, salt, and ground black pepper.",
+    "Transfer to a serving bowl.",
+    "Serve hot. Share and enjoy!"
+  ],
+  "uploader": "68b7ec9b5b9d75b8411610aa",
+  "datetime_added": {
+    "$date": "2025-09-27T13:45:38.231Z"
+  },
+  "__v": 0
+}]

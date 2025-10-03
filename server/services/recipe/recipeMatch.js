@@ -29,6 +29,18 @@ function simScore(ingredients, recipeIngredients){
     return parseFloat(score.toFixed(2));
 }
 
+function getTopFiveMatchedRecipe(simScores) {
+
+    // sort
+    const sorted = simScores.sort((a, b) => Object.values(b)[0] - Object.values(a)[0])
+
+    // get top 5
+    const topFive = sorted.slice(0, 5);
+
+    // remove all objects with score = 0
+    return topFive.filter(item => Object.values(item)[0] !== 0);
+}
+
 function matchRecipe(ingredients, recipes) {
 
     const lemmatizedIngredients = ingredients.map(ing => lemmatizeWord(ing));
@@ -38,9 +50,14 @@ function matchRecipe(ingredients, recipes) {
         let ingRecipeNames = recipe.ingredients.map(ing => ing.name);
         let simScoreObj = {};
         simScoreObj[recipe.title] = simScore(lemmatizedIngredients, ingRecipeNames)
+        simScoreObj["recipe"] = recipe;
         simScores.push(simScoreObj);
     })
 
+    if(simScores.length > 0)
+        simScores = getTopFiveMatchedRecipe(simScores);
+
+    console.log(simScores)      //<===
     return simScores;
 }
 

@@ -96,9 +96,11 @@ router.post("/matchRecipe", /*authenticateToken,*/ async (req, res) => {
         const allRecipes = await Recipe.find();
         const ingredients = req.body;
         const scores = matchRecipe(ingredients, allRecipes);
-        console.log(scores);
+        const topMatchedRecipe = scores[0];
+        scores.shift();
+        // console.log(scores);    //<===
         if(scores.length > 0)
-            res.status(200).json({message: "Recipe matched", recipe: scores});
+            res.status(200).json({message: "Recipe matched", top: topMatchedRecipe, scores: scores});
         else
             res.status(200).json({message: "No recipe matches for now..."});
     } catch (err) {
