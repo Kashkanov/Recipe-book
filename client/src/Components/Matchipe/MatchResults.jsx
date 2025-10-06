@@ -1,16 +1,25 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowsRotate} from "@fortawesome/free-solid-svg-icons/faArrowsRotate";
-import {faThumbsUp} from "@fortawesome/free-regular-svg-icons";
-import {useState} from "react";
+const MatchResults = ({matchedRecipes, topMatchedRecipe, setMatchedRecipes, setTopMatchedRecipe, setIngredients}) => {
 
-const addIngredients = ({matchedRecipes, topMatchedRecipe}) => {
+    function clearAll(){
+        setMatchedRecipes([])
+        setTopMatchedRecipe(null)
+        setIngredients([])
+    }
 
     return (
         <div
             className="relative flex flex-col items-center justify-center bg-[#8E5F5F] w-5/6 h-5/6 mt-25 rounded-xl gap-2 p-5">
             <div className="flex w-full h-1/6 justify-between items-center">
                 <h1 className="text-3xl text-white"><strong>Results</strong></h1>
-                <button className="text-2xl cursor-pointer">Retry&nbsp;<FontAwesomeIcon icon={faArrowsRotate}/></button>
+                <button
+                    className="text-2xl cursor-pointer"
+                    type="button"
+                    onClick={() => clearAll()}
+                >
+                    Retry&nbsp;<FontAwesomeIcon icon={faArrowsRotate}/>
+                </button>
             </div>
             <div className="flex w-full h-5/6 justify-center p-2">
                 <div className="relative flex flex-col justify-end items-center w-4/6 h-full">
@@ -53,4 +62,4 @@ const addIngredients = ({matchedRecipes, topMatchedRecipe}) => {
     )
 }
 
-export default addIngredients;
+export default MatchResults;

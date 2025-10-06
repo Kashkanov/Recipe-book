@@ -102,7 +102,7 @@ router.post("/matchRecipe", /*authenticateToken,*/ async (req, res) => {
         if(scores.length > 0)
             res.status(200).json({message: "Recipe matched", top: topMatchedRecipe, scores: scores});
         else
-            res.status(200).json({message: "No recipe matches for now..."});
+            res.status(204).end();
     } catch (err) {
         console.log(err);
         res.status(500).json({message: err.message});

@@ -1,7 +1,7 @@
 import './App.css'
 import {BrowserRouter, Route, Routes} from "react-router";
 import Homepage from "./pages/Home/Homepage.jsx";
-import NavBar from "./Components/NavBar.jsx";
+import NavBar from "./Components/Shared/Navbar.jsx";
 import Recipes from "./pages/Recipes/Recipes.jsx";
 import RecipePage from "./pages/RecipePage/RecipePage.jsx";
 import AddRecipe from "./pages/Home/AddRecipe.jsx";

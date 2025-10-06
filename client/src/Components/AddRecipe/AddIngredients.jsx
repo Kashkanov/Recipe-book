@@ -36,7 +36,9 @@ const AddIngredients = ({ingredients, setIngredients, ingredientCount, setIngred
             </div>
             <div className="relative flex flex-col w-full px-5">
                 {/* Existing ingredients */}
-                {ingredients.map((ingredient, index) => (
+
+                {ingredients &&
+                    ingredients.map((ingredient, index) => (
                     <div key={index}
                          className="flex items-center w-full h-25 bg-[#588157] text-white rounded-lg p-10 mb-5 text-xl">
                         <div className="flex justify-start w-1/6">{ingredient.quantity}</div>

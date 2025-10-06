@@ -69,5 +69,11 @@ export function matchRecipe(ingredients) {
             },
             body: JSON.stringify(ingredients),
         })
-        .then((res) => res.json());
+        .then((res) => {
+            console.log(res.status)   //<===
+            if(res.status === 204)
+                return null
+            if(res.ok)
+                return res.json()
+        })
 }
