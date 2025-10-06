@@ -15,7 +15,7 @@ router.get("/logout", (req, res) => {
 })
 router.get("/me", authenticateToken, (req, res) => {
     const user =  req.user.user        //<===
-    // console.log("req.user: ", user._id, " ", user.username);        //<===
+    console.log("req.user: ", user._id, " ", user.username);        //<===
     res.json({ id: user._id, username: user.username });
 })
 

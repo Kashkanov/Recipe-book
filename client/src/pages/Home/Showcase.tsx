@@ -1,13 +1,15 @@
 import {useEffect, useState} from "react";
 import {motion} from "motion/react";
 import {Link} from "react-router-dom";
-import {useAuth} from "../../Contexts/AuthContext.jsx";
+import {useAuth} from "../../Contexts/AuthContext.js";
 import { getThreeLatestRecipes, getLatestRecipe } from "../../services/recipeService.js";
+import type {recipe} from "../../types/recipe";
 
 const Showcase = () => {
 
-    const [sampRecipes, setSampRecipes] = useState([]);
-    const [newestRecipe, setNewestRecipe] = useState({});
+
+    const [sampRecipes, setSampRecipes] = useState<recipe[]>([]);
+    const [newestRecipe, setNewestRecipe] = useState<recipe>();
     const {user} = useAuth();
 
     async function ThreeLatestRecipes() {
@@ -33,15 +35,15 @@ const Showcase = () => {
                 (
                     <div className="w-5/6 h-3/4 flex overflow-x-hidden">
                         <div className="w-1/2 h-full p-3">
-                            <Link to={`/Recipes/${newestRecipe._id}`}>
+                            <Link to={`/Recipes/${newestRecipe?._id}`}>
                                 <motion.div
                                     className="relative w-full max-w-full h-full bg-gray-700 rounded-xl shadow-lg overflow-hidden cursor-pointer"
                                     initial={{scale: 1}}
                                     whileHover="hover"
                                 >
                                     <img
-                                        src={newestRecipe.picture}
-                                        alt={newestRecipe.title}
+                                        src={newestRecipe?.picture}
+                                        alt={newestRecipe?.title}
                                         className="w-full h-full object-cover"
                                     />
                                     {/*Overlay pull-down on hover*/}
@@ -56,19 +58,19 @@ const Showcase = () => {
                                         }}
                                     >
                                         <div className="flex-col justify-center w-full h-44">
-                                            <h1 className="text-5xl font-bold">{newestRecipe.title}</h1>
-                                            <p className="pt-5 mx-5">{newestRecipe.description}</p>
+                                            <h1 className="text-5xl font-bold">{newestRecipe?.title}</h1>
+                                            <p className="pt-5 mx-5">{newestRecipe?.description}</p>
                                             <div className="flex justify-center items-center w-full mt-5">
                                                 <div className="flex-col w-1/2 justify-center">
                                                     <p className="text-5xl">🔪</p>
                                                     <h2 className="text-3xl">
-                                                        <strong>{newestRecipe.prep_time}</strong> mins</h2>
+                                                        <strong>{newestRecipe?.prep_time}</strong> mins</h2>
                                                     <p>Prep Time</p>
                                                 </div>
                                                 <div className="flex-col w-1/2 justify-center">
                                                     <p className="text-5xl">🍳</p>
                                                     <h2 className="text-3xl">
-                                                        <strong>{newestRecipe.cook_time}</strong> mins</h2>
+                                                        <strong>{newestRecipe?.cook_time}</strong> mins</h2>
                                                     <p>Cook Time</p>
                                                 </div>
                                             </div>

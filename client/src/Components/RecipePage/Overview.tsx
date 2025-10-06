@@ -1,7 +1,15 @@
 import {motion} from "framer-motion";
-import PropTypes from "prop-types";
+import type {FC} from "react";
 
-const Overview = ({title, prep_time, cook_time, description, uploader}) => {
+type AppProps = {
+    title: string,
+    prep_time: number,
+    cook_time: number,
+    description: string,
+    uploader: string
+}
+
+const Overview: FC<AppProps> = ({title, prep_time, cook_time, description, uploader}) => {
 
     return (
         <motion.div
@@ -22,10 +30,3 @@ const Overview = ({title, prep_time, cook_time, description, uploader}) => {
 }
 
 export default Overview;
-Overview.propTypes = {
-    title: PropTypes.string,
-    prep_time: PropTypes.number,
-    cook_time: PropTypes.number,
-    description: PropTypes.string,
-    uploader: PropTypes.string
-};

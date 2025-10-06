@@ -1,16 +1,17 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {motion} from "framer-motion";
-import Overview from "../../Components/RecipePage/Overview.jsx";
-import Ingredients from "../../Components/RecipePage/Ingredients.jsx";
-import Steps from "../../Components/RecipePage/Steps.jsx";
+import Overview from "../../Components/RecipePage/Overview.js";
+import Ingredients from "../../Components/RecipePage/Ingredients.js";
+import Steps from "../../Components/RecipePage/Steps.js";
 import {getRecipeById} from "../../services/recipeService.js";
+import type {recipe} from "../../types/recipe";
 
 const RecipePage = () => {
 
-    const [recipe, setRecipe] = useState({});
+    const [recipe, setRecipe] = useState<recipe>();
     const params = useParams();
-    const [showFullPic, setShowFullPic] = useState(false);
+    const [showFullPic, setShowFullPic] = useState<boolean>(false);
 
     async function getRecipe() {
         const id = params.id?.toString() || undefined;

@@ -3,9 +3,8 @@ const lemmatizer = require('wink-lemmatizer');
 function lemmatizeWord(word) {
 
     const loWord = word.toLowerCase();
-    const lem = lemmatizer.noun(loWord);
+    return lemmatizer.noun(loWord);
     // console.log(`lemmatized word ${lem}`)
-    return lem;
 }
 
 function isIncluded(ingredient, recipeIngredients) {
@@ -49,7 +48,7 @@ function matchRecipe(ingredients, recipes) {
     recipes.forEach((recipe) => {
         let ingRecipeNames = recipe.ingredients.map(ing => ing.name);
         let simScoreObj = {};
-        simScoreObj[recipe.title] = simScore(lemmatizedIngredients, ingRecipeNames)
+        simScoreObj["score"] = simScore(lemmatizedIngredients, ingRecipeNames)
         simScoreObj["recipe"] = recipe;
         simScores.push(simScoreObj);
     })

@@ -28,7 +28,7 @@ test('Check all sim scores if matches 5 or more', ()=> {
     ingredients = ['Tomatoes', 'Eggs', 'Potato']
     topFive = [
         {
-            "Beef Kaldereta": 0.67,
+            "score": 0.67,
             "recipe": {
                 "_id": { "$oid": "68a814f12369bcb5d56931f8" },
                 "cook_time": 75,
@@ -66,7 +66,7 @@ test('Check all sim scores if matches 5 or more', ()=> {
             }
         },
         {
-            "Menudo": 0.67,
+            "score": 0.67,
             "recipe": {
                 "_id": { "$oid": "68a814f12369bcb5d56931f9" },
                 "cook_time": 45,
@@ -106,7 +106,7 @@ test('Check all sim scores if matches 5 or more', ()=> {
             }
         },
         {
-            "Sinigang na Baboy": 0.33,
+            "score": 0.33,
             "recipe": {
                 "_id": { "$oid": "68a814f12369bcb5d56931f6" },
                 "cook_time": 60,
@@ -141,7 +141,7 @@ test('Check all sim scores if matches 5 or more', ()=> {
             }
         },
         {
-            "Pancit Canton": 0.33,
+            "score": 0.33,
             "recipe": {
                 "_id": { "$oid": "68b016f96b05efcba55b90b6" },
                 "cook_time": 30,
@@ -179,7 +179,7 @@ test('Check all sim scores if matches 5 or more', ()=> {
             }
         },
         {
-            "Arroz Caldo": 0.33,
+            "score": 0.33,
             "recipe": {
                 "_id": { "$oid": "68b016f96b05efcba55b90b8" },
                 "cook_time": 45,
@@ -223,7 +223,7 @@ test('Check all sim scores if matches less than 5', ()=> {
     ingredients = ['Eggplant']
     topFive = [
         {
-            "Sinigang na Baboy": 1,
+            "score": 1,
             "recipe": {
                 "_id": { "$oid": "68a814f12369bcb5d56931f6" },
                 "cook_time": 60,
@@ -258,7 +258,7 @@ test('Check all sim scores if matches less than 5', ()=> {
             }
         },
         {
-            "Kare-Kare": 1,
+            "score": 1,
             "recipe": {
                 "_id": { "$oid": "68b016f96b05efcba55b90ba" },
                 "cook_time": 90,

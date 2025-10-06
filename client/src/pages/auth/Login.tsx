@@ -1,4 +1,4 @@
-import {useAuth} from "../../Contexts/AuthContext.jsx";
+import {useAuth} from "../../Contexts/AuthContext";
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 
@@ -8,12 +8,14 @@ const Login = () => {
     const navigate = useNavigate();
     const [isCredentialsValid, setIsCredentialsValid] = useState(true);
 
-    const handleLogin = async (e) => {
+    const handleLogin = async (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const username = e.target.username.value;
-        const password = e.target.password.value;
+
+        const form  = e.currentTarget;
+        const username = form.username.value;
+        const password = form.password.value;
         const response = await login(username, password);
-        console.log("reachable");     //<===
+        console.log(response);     //<===
         if (response) {
             setIsCredentialsValid(true);
             navigate("/");
@@ -56,6 +58,7 @@ const Login = () => {
                                     name="password"
                                     className="bg-white w-full p-1 rounded-md text-black"
                                     placeholder="Password"
+                                    autoComplete="current-password"
                                 />
                             </label>
                             <div className="flex flex-col justify-center h-1/4 items-center gap-y-2">

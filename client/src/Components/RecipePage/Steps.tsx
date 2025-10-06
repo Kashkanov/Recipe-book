@@ -1,7 +1,11 @@
 import {motion} from "framer-motion";
-import PropTypes from "prop-types";
+import type {FC} from "react";
 
-const Steps = ({steps}) => {
+type AppProps = {
+    steps: string[];
+};
+
+const Steps: FC<AppProps> = ({steps}) => {
 
     return (
         <div className="flex-col text-start bg-yellow-100 rounded-lg text-black p-5 ">
@@ -35,6 +39,3 @@ const Steps = ({steps}) => {
 }
 
 export default Steps;
-Steps.propTypes = {
-    steps: PropTypes.array
-}

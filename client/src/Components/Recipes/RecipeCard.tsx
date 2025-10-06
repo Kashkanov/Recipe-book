@@ -1,8 +1,13 @@
-import PropTypes from "prop-types";
 import {motion} from "framer-motion";
 import {Link} from "react-router-dom";
+import type {FC} from "react";
+import type {recipe} from "../../types/recipe";
 
-const RecipeCard = ({recipe}) => {
+type AppProps = {
+    recipe: recipe;
+}
+
+const RecipeCard: FC<AppProps> = ({recipe}) => {
 
     return (
         <motion.div
@@ -63,6 +68,3 @@ const RecipeCard = ({recipe}) => {
 }
 
 export default RecipeCard
-RecipeCard.propTypes = {
-    recipe: PropTypes.object
-}

@@ -1,14 +1,22 @@
 import {faCirclePlus} from "@fortawesome/free-solid-svg-icons/faCirclePlus";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {useEffect, useState} from "react";
+import {type FC, useEffect, useRef, useState} from "react";
 
-const AddIngredients = ({ingredients, setIngredients, handleSubmitIngredients, isValidIngredients}) => {
+type AppProps = {
+    ingredients: string[];
+    setIngredients: React.Dispatch<React.SetStateAction<string[]>>;
+    handleSubmitIngredients: (ingredients: React.FormEvent<HTMLFormElement>) => Promise<void>;
+    isValidIngredients: boolean;
+};
+
+const AddIngredients: FC<AppProps> = ({ingredients, setIngredients, handleSubmitIngredients, isValidIngredients}) => {
 
     const [currIngredient, setCurrIngredient] = useState("");
+    const ingRef = useRef<HTMLInputElement>(null);
 
     const handleAddIngredient = () => {
         setIngredients([...ingredients, currIngredient]);
-        document.querySelector('input[name="name"]').value = '';
+        ingRef.current?.value;
         setCurrIngredient("");
     }
 
@@ -76,6 +84,7 @@ const AddIngredients = ({ingredients, setIngredients, handleSubmitIngredients, i
                         </div>
                         <div className="w-full px-5">
                             <input
+                                ref={ingRef}
                                 className="w-full h-10 bg-white rounded-sm border border-black text-black px-2 text-xl"
                                 type="text"
                                 name="name"

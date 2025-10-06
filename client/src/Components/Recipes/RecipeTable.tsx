@@ -1,7 +1,12 @@
-import PropTypes from "prop-types";
-import RecipeCard from "./RecipeCard.jsx";
+import RecipeCard from "./RecipeCard.js";
+import type {FC} from "react";
+import type {recipe} from "../../types/recipe";
 
-const RecipeTable = ({recipes}) => {
+type AppProps = {
+    recipes: recipe[];
+}
+
+const RecipeTable: FC<AppProps> = ({recipes}) => {
 
     return (
         <div className="w-4/6 grid grid-cols-3 gap-4">
@@ -16,6 +21,4 @@ const RecipeTable = ({recipes}) => {
 }
 
 export default RecipeTable;
-RecipeTable.propTypes = {
-    recipes: PropTypes.array
-}
+

@@ -1,15 +1,36 @@
-import {useRef} from "react";
+import {type FC, useRef, useState} from "react";
 import {faCirclePlus} from "@fortawesome/free-solid-svg-icons/faCirclePlus";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import PropTypes from "prop-types";
+import type {ingredient} from "../../types/ingredient";
 
-const AddIngredients = ({ingredients, setIngredients, ingredientCount, setIngredientCount, isIngredientsValid}) => {
-    const newIngredientRef = useRef(null);
+type AppProps = {
+    ingredients: ingredient[];
+    setIngredients: React.Dispatch<React.SetStateAction<ingredient[]>>;
+    ingredientCount: number,
+    setIngredientCount: React.Dispatch<React.SetStateAction<number>>;
+    isIngredientsValid: boolean;
+}
 
-    const handleAddIngredient = (qty, unit, name) => {
+const AddIngredients: FC<AppProps> = ({ingredients, setIngredients, ingredientCount, setIngredientCount, isIngredientsValid}) => {
+    const newIngredientRef = useRef<HTMLDivElement>(null);
+    const qtyRef = useRef<HTMLInputElement | null>(null);
+    const unitRef = useRef<HTMLInputElement | null>(null);
+    const nameRef = useRef<HTMLInputElement | null>(null);
+    const [isIngredientValid, setIsIngredientValid] = useState<boolean>(false);
+
+    const handleAddIngredient = () => {
+        const qty = qtyRef.current?.value;
+        const unit = unitRef.current?.value;
+        const name = nameRef.current?.value;
+
+        let quantity = 0;
+
+        if(qty)
+            quantity = parseInt(qty)
+
         const newIngredient = {
             name: name,
-            quantity: qty,
+            quantity: quantity,
             unit: unit
         };
         setIngredients([...ingredients, newIngredient]);
@@ -18,16 +39,24 @@ const AddIngredients = ({ingredients, setIngredients, ingredientCount, setIngred
     };
 
     const clearInputs = () => {
-        const inputs = newIngredientRef.current.querySelectorAll("input");
-        inputs.forEach((input) => (input.value = "")); // clears values
+        const inputs = newIngredientRef.current?.querySelectorAll("input");
+        inputs?.forEach((input) => (input.value = "")); // clears values
     };
 
-    const handleRemoveIngredient = (index) => {
+    const handleRemoveIngredient = (index: number) => {
         const newIngredients = [...ingredients];
         newIngredients.splice(index, 1);
         setIngredients(newIngredients);
     }
 
+    const checkIsIngredientValid = () => {
+        const isQtyEmpty = !qtyRef.current?.value?.trim();
+        const isUnitEmpty = !unitRef.current?.value?.trim();
+        const isNameEmpty = !nameRef.current?.value?.trim();
+        if(isQtyEmpty || isUnitEmpty || isNameEmpty)
+            setIsIngredientValid(false);
+        else setIsIngredientValid(true);
+    }
 
     return (
         <div className="flex flex-col w-full bg-yellow-100 rounded-xl p-5">
@@ -61,36 +90,46 @@ const AddIngredients = ({ingredients, setIngredients, ingredientCount, setIngred
                     <div ref={newIngredientRef} className="relative flex w-full h-4/6">
                         <div className="flex justify-center w-2/12 ">
                             <label
-                                htmlFor={`quantity-${ingredientCount}`}
+                                htmlFor="qtyField"
                                 className="flex flex-col justify-center items-center gap-y-2"
                             >
                                 <p>Quantity</p>
                                 <input
-                                    id={`quantity-${ingredientCount}`}
+                                    ref={qtyRef}
+                                    id="qtyField"
+                                    name="qtyField"
+                                    type="number"
+                                    onChange={checkIsIngredientValid}
                                     className="w-20 h-10 text-black bg-white rounded-md text-xl px-3 border border-[#344e41]"
                                 />
                             </label>
                         </div>
                         <div className="flex justify-center w-4/12 ">
                             <label
-                                htmlFor={`unit-${ingredientCount}`}
+                                htmlFor="unitField"
                                 className="flex flex-col justify-center items-center gap-y-2 "
                             >
                                 <p>Unit</p>
                                 <input
-                                    id={`unit-${ingredientCount}`}
+                                    ref={unitRef}
+                                    id="unitField"
+                                    name="unitField"
+                                    onChange={checkIsIngredientValid}
                                     className="w-40 h-10 text-black bg-white rounded-md text-xl px-3 border border-[#344e41]"
                                 />
                             </label>
                         </div>
                         <div className="flex justify-center w-6/12 ">
                             <label
-                                htmlFor={`name-${ingredientCount}`}
+                                htmlFor="nameField"
                                 className="flex flex-col justify-center items-center gap-y-2 "
                             >
                                 <p>Name</p>
                                 <input
-                                    id={`name-${ingredientCount}`}
+                                    ref={nameRef}
+                                    id="nameField"
+                                    name="nameField"
+                                    onChange={checkIsIngredientValid}
                                     className="w-100 h-10 text-black bg-white rounded-md text-xl px-3 border border-[#344e41]"
                                 />
                             </label>
@@ -99,14 +138,9 @@ const AddIngredients = ({ingredients, setIngredients, ingredientCount, setIngred
                     <div className="flex justify-center items-center w-full h-2/6">
                         <button
                             type="button"
-                            className="bg-[#344e41] hover:bg-[#588157] text-white h-10 text-[18px] px-4 rounded"
-                            onClick={() => {
-                                handleAddIngredient(
-                                    document.getElementById(`quantity-${ingredientCount}`).value,
-                                    document.getElementById(`unit-${ingredientCount}`).value,
-                                    document.getElementById(`name-${ingredientCount}`).value
-                                );
-                            }}
+                            className={`text-white h-10 text-[18px] px-4 rounded ${isIngredientValid ? "bg-[#344e41] hover:bg-[#588157]" : "bg-gray-400 cursor-not-allowed"}`}
+                            disabled={!isIngredientValid}
+                            onClick={handleAddIngredient}
                         >
                             Add Ingredient <FontAwesomeIcon icon={faCirclePlus}/>
                         </button>
@@ -121,10 +155,3 @@ const AddIngredients = ({ingredients, setIngredients, ingredientCount, setIngred
 }
 
 export default AddIngredients;
-AddIngredients.propTypes = {
-    ingredients: PropTypes.array,
-    setIngredients: PropTypes.func,
-    ingredientCount: PropTypes.number,
-    setIngredientCount: PropTypes.func,
-    isIngredientsValid: PropTypes.bool
-}

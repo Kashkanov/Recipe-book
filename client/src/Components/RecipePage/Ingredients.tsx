@@ -1,22 +1,27 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {motion} from "framer-motion";
-import {useState} from "react";
-import PropTypes from "prop-types";
+import {type FC, useState} from "react";
+import type {ingredient} from "../../types/ingredient";
 
-const Ingredients = ({ingredients}) => {
+type AppProps = {
+    ingredients: ingredient[];
+}
 
-    const [servings, setServings] = useState(1);
-    const [checkedItems, setCheckedItems] = useState([]);
+const Ingredients: FC<AppProps> = ({ingredients}) => {
+
+    const [servings, setServings] = useState<number>(1);
+    const [checkedItems, setCheckedItems] = useState<number[]>([]);
 
     // Function to toggle the checked state of an item from the list
-    const toggleCheck = (index) => {
+    const toggleCheck = (index: number) => {
         if (checkedItems.includes(index)) {
             setCheckedItems(checkedItems.filter((item) => item !== index));
         } else {
             setCheckedItems([...checkedItems, index]);
         }
     };
+
 
     return (
 
@@ -41,7 +46,7 @@ const Ingredients = ({ingredients}) => {
                         type="number"
                         className="flex h-full w-3/6 text-center bg-white border-b-3 border-t-3"
                         value={servings}
-                        onChange={(e) => setServings(e.target.value)}
+                        onChange={(e) => setServings(parseInt(e.target?.value))}
                     />
                     <button
                         onClick={() => setServings(servings + 1)}
@@ -93,6 +98,3 @@ const Ingredients = ({ingredients}) => {
 }
 
 export default Ingredients;
-Ingredients.propTypes = {
-    ingredients : PropTypes.array
-}

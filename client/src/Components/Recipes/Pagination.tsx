@@ -1,7 +1,12 @@
-import {useEffect, useRef, useState} from "react";
-import PropTypes from "prop-types";
+import {type FC, useEffect, useRef} from "react";
 
-const Pagination = ({total, setPage,currPage}) => {
+type AppProps = {
+    total: number;
+    handlePageChange: (page: number) => void;
+    currPage: number;
+}
+
+const Pagination: FC<AppProps> = ({total, handlePageChange, currPage}) => {
     /*This displays the pagination buttons which redirects to the correct page in the Seller Portal*/
 
     const pageButtons = [];
@@ -9,10 +14,10 @@ const Pagination = ({total, setPage,currPage}) => {
     const totalPages = Math.ceil(total / 6);
 
     const end = Math.min(currPage + 1, totalPages - 2);
-    const leftDotRef = useRef(null);
-    const rightDotRef = useRef(null);
+    const leftDotRef = useRef<HTMLButtonElement>(null);
+    const rightDotRef = useRef<HTMLButtonElement>(null);
 
-    console.log(`currpage: ${currPage}`)
+    // console.log(`currpage: ${currPage}`)        //<===
 
     // generate page buttons
     for (let i = start; i <= end; i++) {
@@ -24,15 +29,15 @@ const Pagination = ({total, setPage,currPage}) => {
         // add left and right dots
 
         if (start > 1) {
-            leftDotRef.current.style.display = 'block';
+            leftDotRef.current?.style.setProperty('display', 'block');
         } else {
-            leftDotRef.current.style.display = 'none';
+            leftDotRef.current?.style.setProperty('display', 'none');
         }
 
         if (end < totalPages - 2) {
-            rightDotRef.current.style.display = 'block';
+            rightDotRef.current?.style.setProperty('display', 'block');
         } else {
-            rightDotRef.current.style.display = 'none';
+            rightDotRef.current?.style.setProperty('display', 'none');
         }
     }, [currPage, start, end, pageButtons, totalPages]);
 
@@ -43,7 +48,7 @@ const Pagination = ({total, setPage,currPage}) => {
             <button
                 className={`btn btn-primary ${currPage === 1 ? 'bg-primary text-gray-400' : 'cursor-pointer'}`}
                 //onClick={() => window.location.href = `/recipes?page=${currPage - 1}`}
-                onClick={()=> setPage(currPage - 1)}
+                onClick={()=> handlePageChange(currPage - 1)}
                 disabled={currPage === 1}
             >
                 &lt; Previous
@@ -53,7 +58,7 @@ const Pagination = ({total, setPage,currPage}) => {
             <button
                 className={`btn btn-primary ${currPage === 1 ? 'bg-primary text-gray-400' : 'cursor-pointer'}`}
                 //onClick={() =>  window.location.href = `/recipes?page=${1}`}
-                onClick={()=> setPage(1)}
+                onClick={()=> handlePageChange(1)}
                 disabled={currPage === 1}
             >
                 1
@@ -65,7 +70,7 @@ const Pagination = ({total, setPage,currPage}) => {
                     key={index}
                     className={` ${index + 1 === currPage ? 'bg-primary text-gray-400' : 'cursor-pointer'}`}
                     //onClick={() =>  window.location.href = `/recipes?page=${index + 1}`}
-                    onClick={() => setPage(index + 1)}
+                    onClick={() => handlePageChange(index + 1)}
                     disabled={index + 1 === currPage}
                 >
                     {index + 1}
@@ -79,7 +84,7 @@ const Pagination = ({total, setPage,currPage}) => {
                 <button
                     className={`btn btn-primary ${currPage === totalPages ? 'bg-primary text-gray-400' : 'cursor-pointer'}`}
                     //onClick={() =>  window.location.href = `/recipes?page=${totalPages}`}
-                    onClick={()=> setPage(totalPages)}
+                    onClick={()=> handlePageChange(totalPages)}
                     disabled={currPage === totalPages}
                 >
                     {totalPages}
@@ -88,8 +93,7 @@ const Pagination = ({total, setPage,currPage}) => {
             {/*next button*/}
             <button
                 className={`btn btn-primary ${currPage === totalPages ? 'bg-primary text-gray-400' : 'cursor-pointer'}`}
-                //onClick={() =>  window.location.href = `/recipes?page=${currPage + 1}`}
-                onClick={()=> setPage(currPage + 1)}
+                onClick={()=> handlePageChange(currPage + 1)}
                 disabled={currPage === totalPages}
             >
                 Next &gt;
@@ -99,7 +103,3 @@ const Pagination = ({total, setPage,currPage}) => {
 }
 
 export default Pagination
-Pagination.propTypes = {
-    total: PropTypes.number.isRequired,
-    currPage: PropTypes.number.isRequired
-}

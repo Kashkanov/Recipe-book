@@ -1,6 +1,17 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowsRotate} from "@fortawesome/free-solid-svg-icons/faArrowsRotate";
-const MatchResults = ({matchedRecipes, topMatchedRecipe, setMatchedRecipes, setTopMatchedRecipe, setIngredients}) => {
+import type {recipeMatch} from "../../types/recipeMatch";
+import type {FC} from "react";
+
+type AppProps = {
+    matchedRecipes: recipeMatch[];
+    topMatchedRecipe: recipeMatch | null;
+    setMatchedRecipes: React.Dispatch<React.SetStateAction<recipeMatch[]>>;
+    setTopMatchedRecipe: React.Dispatch<React.SetStateAction<recipeMatch | null>>;
+    setIngredients: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+const MatchResults: FC<AppProps> = ({matchedRecipes, topMatchedRecipe, setMatchedRecipes, setTopMatchedRecipe, setIngredients}) => {
 
     function clearAll(){
         setMatchedRecipes([])
@@ -33,12 +44,12 @@ const MatchResults = ({matchedRecipes, topMatchedRecipe, setMatchedRecipes, setT
                     <div
                         className="relative flex flex-col justify-between items-center w-full h-11/12 shadow-md shadow-black rounded-lg overflow-hidden">
                         <button className="relative flex flex-col w-full h-full justify-between items-center">
-                            <img className="w-full h-full object-cover" src={topMatchedRecipe.recipe.picture}
+                            <img className="w-full h-full object-cover" src={topMatchedRecipe?.recipe.picture}
                                  alt="recipe"/>
                             <div className="absolute bottom-5 w-[100px] h-[100px] bg-[#FEF9C3] z-10 rotate-45"></div>
                             <div
                                 className="absolute flex justify-center items-center bottom-0 text-2xl h-[70px] w-full text-black bg-[#FEF9C3] z-10">
-                                {topMatchedRecipe.recipe.title} - <strong>{(topMatchedRecipe[topMatchedRecipe.recipe.title] * 100).toFixed(2)}%</strong>
+                                {topMatchedRecipe?.recipe.title} - <strong>{topMatchedRecipe && (topMatchedRecipe["score"] * 100).toFixed(2)}%</strong>
                             </div>
                         </button>
                     </div>
@@ -51,7 +62,7 @@ const MatchResults = ({matchedRecipes, topMatchedRecipe, setMatchedRecipes, setT
                                 <div key={recipe.recipe._id} className="flex justify-between items-center h-1/4 w-full bg-[#FEF9C3] rounded-lg text-black text-3xl p-5">
                                     <span className="text-mogra">{count}</span>
                                     <span className="">{recipe.recipe.title}</span>
-                                    <span className=""> - {recipe[recipe.recipe.title] * 100} % <strong><i>Match</i></strong></span>
+                                    <span className=""> - {recipe["score"] * 100} % <strong><i>Match</i></strong></span>
                                 </div>
                             )
                         })}

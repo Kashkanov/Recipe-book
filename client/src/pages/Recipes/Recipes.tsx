@@ -1,15 +1,16 @@
-import RecipeTable from "../../Components/Recipes/RecipeTable.jsx";
+import RecipeTable from "../../Components/Recipes/RecipeTable.js";
 import {useEffect, useState} from "react";
 import {useSearchParams} from "react-router";
-import Pagination from "../../Components/Recipes/Pagination.jsx";
+import Pagination from "../../Components/Recipes/Pagination.js";
 import { getAllRecipesAndCount } from "../../services/recipeService.js";
+import type {recipe} from "../../types/recipe";
 
 const Recipes = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
-    const [recipes, setRecipes] = useState([]);
-    const [total, setTotal] = useState(0);
-    const page = parseInt(searchParams.get("page")) || 1;
+    const [recipes, setRecipes] = useState<recipe[]>();
+    const [total, setTotal] = useState<number>(0);
+    const page = parseInt(searchParams.get("page") ?? "1");
 
     async function AllRecipesAndCount() {
         const response = await getAllRecipesAndCount(page);
@@ -17,8 +18,8 @@ const Recipes = () => {
         setTotal(response.total);
     }
 
-    function handlePageChange(newPage) {
-        setSearchParams({page: newPage});
+    function handlePageChange(newPage: number) {
+        setSearchParams({page: newPage.toString()});
     }
 
     useEffect(() => {
@@ -36,7 +37,7 @@ const Recipes = () => {
                 )}
             </div>
             <div className="flex justify-end p-5 w-full bottom-0 right-0 bg-[#588157]">
-                <Pagination total={total} setPage={handlePageChange} currPage={page}/>
+                <Pagination total={total} handlePageChange={handlePageChange} currPage={page}/>
             </div>
         </div>
     )

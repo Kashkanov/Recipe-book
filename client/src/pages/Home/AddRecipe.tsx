@@ -1,10 +1,10 @@
 import { useRef, useState} from "react";
 import {faTrash} from "@fortawesome/free-solid-svg-icons/faTrash";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import AddIngredients from "../../Components/AddRecipe/AddIngredients.jsx";
-import AddSteps from "../../Components/AddRecipe/AddSteps.jsx";
+import AddIngredients from "../../Components/AddRecipe/AddIngredients.js";
+import AddSteps from "../../Components/AddRecipe/AddSteps.js";
 import {useNavigate} from "react-router-dom";
-import {useAuth} from "../../Contexts/AuthContext.jsx";
+import {useAuth} from "../../Contexts/AuthContext.js";
 import {
     validateTitle,
     validatePrepTime,
@@ -14,64 +14,75 @@ import {
     validateInstructions,
 } from "../../validation/addRecipeValidation.js";
 import {createRecipe, uploadImage} from "../../services/recipeService.js";
+import type {ingredient} from "../../types/ingredient";
 
 const AddRecipe = () => {
 
     const navigate = useNavigate();
-    const [title, setTitle] = useState("");
-    const [prepTime, setPrepTime] = useState(0);
-    const [cookTime, setCookTime] = useState(0);
-    const [description, setDescription] = useState("");
-    const [picture, setPicture] = useState("");
-    const picRef = useRef(null);
-    const picNameRef = useRef(null);
-    const thumbnailRef = useRef(null);
-    const [ingredients, setIngredients] = useState([]);
-    const [ingredientCount, setIngredientCount] = useState(0);
-    const [steps, setSteps] = useState([]);
-    const [stepCount, setStepCount] = useState(0);
+    const [title, setTitle] = useState<string>("");
+    const [prepTime, setPrepTime] = useState<number>(0);
+    const [cookTime, setCookTime] = useState<number>(0);
+    const [description, setDescription] = useState<string>("");
+    const [picture, setPicture] = useState<Blob>();
+    const picRef = useRef<HTMLInputElement>(null);
+    const picNameRef = useRef<HTMLInputElement>(null);
+    const thumbnailRef = useRef<HTMLImageElement>(null);
+    const [ingredients, setIngredients] = useState<ingredient[]>([]);
+    const [ingredientCount, setIngredientCount] = useState<number>(0);
+    const [steps, setSteps] = useState<string[]>([]);
+    const [stepCount, setStepCount] = useState<number>(0);
     const {user} = useAuth();
-    const [isTitleValid, setIsTitleValid] = useState(true);
-    const [isPrepTimeValid, setIsPrepTimeValid] = useState(true);
-    const [isCookTimeValid, setIsCookTimeValid] = useState(true);
-    const [isDescriptionValid, setIsDescriptionValid] = useState(true);
-    const [isIngredientsValid, setIsIngredientsValid] = useState(true);
-    const [isInstructionsValid, setIsInstructionsValid] = useState(true);
+    const [isTitleValid, setIsTitleValid] = useState<boolean>(true);
+    const [isPrepTimeValid, setIsPrepTimeValid] = useState<boolean>(true);
+    const [isCookTimeValid, setIsCookTimeValid] = useState<boolean>(true);
+    const [isDescriptionValid, setIsDescriptionValid] = useState<boolean>(true);
+    const [isIngredientsValid, setIsIngredientsValid] = useState<boolean>(true);
+    const [isInstructionsValid, setIsInstructionsValid] = useState<boolean>(true);
 
-    const handleFileChange = async (e) => {
-        const file = e.target.files[0];
+    const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+
+        const file = e.target.files?.[0];
         if (file) {
             setPicture(file);
         }
-        thumbnailRef.current.src = URL.createObjectURL(file);
-        picNameRef.current.value = file.name;
-        console.log(file.name)
+
+        if (file && thumbnailRef.current && picNameRef.current) {
+            thumbnailRef.current.src = URL.createObjectURL(file);
+            picNameRef.current.value = file.name;
+        }
+        console.log(file?.name)
     };
 
     const handleFileRemove = () => {
-        thumbnailRef.current.src = "/public/assets/placeholderPic.png"
-        picNameRef.current.value = "";
+        if (thumbnailRef.current && picNameRef.current) {
+            thumbnailRef.current.src = "/public/assets/placeholderPic.png"
+            picNameRef.current.value = "";
+        }
     }
 
     const uploadPic = async () => {
         const picFormData = new FormData();
-        let picPath = "";
+        let picPath;
 
-        picFormData.append("picture", picture);
+        if(picture)
+            picFormData.append("picture", picture);
+
         const picResponse = await uploadImage(picFormData);
 
         picPath = picResponse.url;
         return picPath;
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // send to api
 
         if(validateForm()) {
             let picPath = "";
 
-            console.log("user id: ", user.id);     //<===
+            ingredients.forEach((ingredient) => {
+                console.log(ingredient);
+            })
 
             if (picture) {
                 picPath = await uploadPic();
@@ -85,14 +96,14 @@ const AddRecipe = () => {
                 picture: picPath,
                 ingredients: ingredients,
                 steps: steps,
-                uploader: user.id,
+                uploader: user?.id,
             }
 
             const response = await createRecipe(recipe);
             console.log(response);  //<===
 
             const newRecipe = await response.recipe;
-            console.log("new recipe: ", newRecipe)      //<===
+            // console.log("new recipe: ", newRecipe)      //<===
             navigate(`/recipes/${newRecipe._id}`);
         }
 
@@ -239,7 +250,7 @@ const AddRecipe = () => {
                                     <button
                                         type="button"
                                         className="border bg-blue-400 w-3/12 text-white h-full p-1 rounded-md"
-                                        onClick={() => picRef.current.click()}
+                                        onClick={() => picRef.current?.click()}
                                     >
                                         Upload
                                     </button>

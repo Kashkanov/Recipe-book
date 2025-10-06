@@ -1,9 +1,14 @@
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 const Register = () => {
 
-    const slideshowPics = [
+    type Slide = {
+        id: number,
+        src: string,
+    }
+
+    const slideshowPics: Slide[] = [
         {
             id: 0,
             src: "./assets/chopping.jpg"
@@ -27,19 +32,21 @@ const Register = () => {
     ]
 
     const totalPics = slideshowPics.length;
-    const [slideshowIndex, setSlideshowIndex] = useState(0);
-    const picRef = useRef(null);
+    const [slideshowIndex, setSlideshowIndex] = useState<number>(0);
+    const picRef = useRef<HTMLImageElement>(null);
 
     const navigate = useNavigate();
 
     const api_url = "http://localhost:5050/";
-    const register = (e) => {
+    const register = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const username = e.target.username.value;
-        const email = e.target.email.value;
+
+        const form = e.currentTarget;
+        const username = form.username.value;
+        const email = form.email.value;
         const firstname = "";
         const lastname = "";
-        const password = e.target.password.value;
+        const password = form.password.value;
         const data = {username, password, email, firstname, lastname};
 
         fetch(api_url + "api/signup", {
@@ -150,9 +157,9 @@ const Register = () => {
                 </div>
                 <div className="w-1/2 h-full overflow-hidden">
                     <img
-                        key={slideshowPics[slideshowIndex].id}
+                        key={slideshowPics[slideshowIndex]?.id}
                         ref={picRef}
-                        src={slideshowPics[slideshowIndex].src}
+                        src={slideshowPics[slideshowIndex]?.src}
                         alt="pic"
                         className="w-full h-full object-cover animate-fade-left animate-once animate-duration-1000 animate-ease-in-out animate-normal"
                     />

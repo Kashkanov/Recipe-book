@@ -1,0 +1,152 @@
+[
+  {
+    "id": "TASK_1",
+    "priority": "HIGH",
+    "tags": [],
+    "title": "Convert to TypeScript",
+    "description": "Change JSX to TSX",
+    "status": "IN_PROGRESS",
+    "date": {
+      "date": {
+        "year": 2025,
+        "month": 10,
+        "day": 6
+      },
+      "time": {
+        "hour": 10,
+        "minute": 10,
+        "second": 9,
+        "nano": 338237100
+      }
+    },
+    "dueDate": {
+      "date": {
+        "year": 2025,
+        "month": 10,
+        "day": 8
+      },
+      "time": {
+        "hour": 17,
+        "minute": 0,
+        "second": 0,
+        "nano": 0
+      }
+    },
+    "isImported": false,
+    "prerequisiteTaskId": "TASK_16"
+  },
+  {
+    "id": "TASK_4",
+    "priority": "LOW",
+    "tags": [],
+    "title": "Reload issue",
+    "description": "When page is reloaded, load actual page, not home",
+    "status": "TODO",
+    "date": {
+      "date": {
+        "year": 2025,
+        "month": 10,
+        "day": 6
+      },
+      "time": {
+        "hour": 10,
+        "minute": 11,
+        "second": 45,
+        "nano": 329162300
+      }
+    },
+    "dueDate": {
+      "date": {
+        "year": 2025,
+        "month": 10,
+        "day": 9
+      },
+      "time": {
+        "hour": 17,
+        "minute": 0,
+        "second": 0,
+        "nano": 0
+      }
+    },
+    "isImported": false
+  },
+  {
+    "id": "TASK_7",
+    "priority": "MEDIUM",
+    "tags": [],
+    "title": "Comments",
+    "description": "Do the commenting feature",
+    "status": "TODO",
+    "date": {
+      "date": {
+        "year": 2025,
+        "month": 10,
+        "day": 6
+      },
+      "time": {
+        "hour": 10,
+        "minute": 12,
+        "second": 27,
+        "nano": 765729900
+      }
+    },
+    "isImported": false
+  },
+  {
+    "id": "TASK_11",
+    "priority": "LOW",
+    "tags": [],
+    "title": "Animations polishing",
+    "description": "",
+    "status": "TODO",
+    "date": {
+      "date": {
+        "year": 2025,
+        "month": 10,
+        "day": 6
+      },
+      "time": {
+        "hour": 10,
+        "minute": 12,
+        "second": 41,
+        "nano": 352444400
+      }
+    },
+    "isImported": false
+  },
+  {
+    "id": "TASK_16",
+    "priority": "LOW",
+    "tags": [],
+    "title": "Separate types",
+    "description": "create folder to store object types",
+    "status": "DONE",
+    "date": {
+      "date": {
+        "year": 2025,
+        "month": 10,
+        "day": 6
+      },
+      "time": {
+        "hour": 15,
+        "minute": 37,
+        "second": 2,
+        "nano": 200997900
+      }
+    },
+    "finishDate": {
+      "date": {
+        "year": 2025,
+        "month": 10,
+        "day": 6
+      },
+      "time": {
+        "hour": 16,
+        "minute": 36,
+        "second": 6,
+        "nano": 437200900
+      }
+    },
+    "isImported": false
+  }
+]

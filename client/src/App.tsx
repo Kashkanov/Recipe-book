@@ -1,14 +1,14 @@
 import './App.css'
 import {BrowserRouter, Route, Routes} from "react-router";
-import Homepage from "./pages/Home/Homepage.jsx";
-import NavBar from "./Components/Shared/Navbar.jsx";
-import Recipes from "./pages/Recipes/Recipes.jsx";
-import RecipePage from "./pages/RecipePage/RecipePage.jsx";
-import AddRecipe from "./pages/Home/AddRecipe.jsx";
-import MatchPage from "./pages/Matchipe/MatchPage.jsx";
-import Login from "./pages/auth/Login.jsx";
-import Register from "./pages/auth/Register.jsx";
-import {AuthProvider} from "./Contexts/AuthContext.jsx";
+import Homepage from "./pages/Home/Homepage.js";
+import NavBar from "./Components/Shared/Navbar.js";
+import Recipes from "./pages/Recipes/Recipes.js";
+import RecipePage from "./pages/RecipePage/RecipePage.js";
+import AddRecipe from "./pages/Home/AddRecipe.js";
+import MatchPage from "./pages/Matchipe/MatchPage.js";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import {AuthProvider} from "./Contexts/AuthContext.js";
 import AuthWrapper from "./Wrappers/AuthWrapper.jsx";
 import ReverseAuthWrapper from "./Wrappers/ReverseAuthWrapper.jsx";
 
