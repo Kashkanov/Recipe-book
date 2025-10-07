@@ -43,10 +43,10 @@ const MatchPage = () => {
 
 
     return (
-        <div className="relative flex flex-col items-center justify-center bg-[#DAD7CD] w-full h-screen pb-5 ">
+        <div className="relative flex flex-col items-center justify-center bg-[#DAD7CD] w-full h-screen pb-5 overflow-x-hidden">
             <img className="absolute w-full h-full top-0 left-0 object-cover opacity-35"
                  alt="matchipeBg"
-                 src="../../../public/assets/matchipe_bg.jpeg"
+                 src="../../../public/assets/matchipe_bg.webp"
             />
 
             {loading ?

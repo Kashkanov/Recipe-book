@@ -1,6 +1,9 @@
 import {type FC, useRef, useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCirclePlus} from "@fortawesome/free-solid-svg-icons/faCirclePlus";
+import {motion} from "framer-motion";
+import {AnimatePresence} from "motion/react";
+import {faXmark} from "@fortawesome/free-solid-svg-icons";
 
 type AppProps = {
     steps: string[];
@@ -16,7 +19,7 @@ const AddSteps: FC<AppProps> = ({steps, setSteps, stepCount, setStepCount, isIns
     const [isStepValid, setIsStepValid] = useState<boolean>(false);
 
     const handleAddStep = () => {
-        if(newStepRef.current) {
+        if (newStepRef.current) {
             const newStep = newStepRef.current.value;
 
             setSteps([...steps, newStep]);
@@ -26,8 +29,9 @@ const AddSteps: FC<AppProps> = ({steps, setSteps, stepCount, setStepCount, isIns
     };
 
     const clearInputs = () => {
-        if(newStepRef.current)
+        if (newStepRef.current)
             newStepRef.current.value = "";
+        setIsStepValid(false)
     };
 
     const handleRemoveStep = (index: number) => {
@@ -43,32 +47,54 @@ const AddSteps: FC<AppProps> = ({steps, setSteps, stepCount, setStepCount, isIns
     }
 
     return (
-        <div className="flex flex-col w-full bg-yellow-100 rounded-xl p-5">
+        <div className="flex flex-col w-full bg-yellow-100 rounded-xl p-5 shadow-lg shadow-gray-900">
             <div className="flex justify-start m-5">
-                <h2 className="text-4xl"><b>Add Steps</b></h2>
+                <h2 className="text-4xl"><b>Steps</b></h2>
             </div>
             <div className="relative flex flex-col w-full px-5 list-decimal">
-                {/* Existing steps */}
-                {steps.map((step, index) => (
-                    <div
-                        key={index}
-                        className="flex items-center w-full h-25 bg-[#588157] text-white rounded-lg p-10 mb-5 text-xl"
-                    >
-                        <li className="flex justify-start w-5/6">{index + 1}. {step}</li>
-                        <div className="flex justify-end w-1/6">
-                            <button
-                                type="button"
-                                className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                                onClick={() => handleRemoveStep(index)}
-                            >
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                ))}
+                <AnimatePresence>
+                    {/* Existing steps */}
+                    {steps.map((step, index) => (
+                        <motion.div
+                            key={index}
+                            className="relative flex items-center w-full h-25 bg-[#588157] text-white rounded-lg p-10 mb-5 text-xl"
+                            initial={{
+                                opacity: 0,
+                                x: -500
+                            }}
+                            animate={{
+                                opacity: 1,
+                                x: 0,
+                                transition: {
+                                    duration: 0.8,
+                                    delay: 0.4
+                                }
+                            }}
+                            exit={{
+                                opacity: 0,
+                                x: -500,
+                                transition: {
+                                    duration: 0.8,
+                                    delay: 0.2
+                                }
+                            }}
+                        >
+                            <li className="flex justify-start w-5/6">{index + 1}. {step}</li>
+                            <div className="flex justify-end w-1/6">
+                                <button
+                                    type="button"
+                                    className="absolute flex justify-center items-center right-[-10px] top-[-10px] w-[3rem] h-[3rem] bg-red-400 hover:bg-red-700 text-white text-sm py-2 px-4 rounded-full"
+                                    onClick={() => handleRemoveStep(index)}
+                                >
+                                    <FontAwesomeIcon icon={faXmark}/>
+                                </button>
+                            </div>
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
                 {/* Add new step */}
                 <div
-                    className="flex flex-col items-center justify-center w-full h-60 bg-[#dad7cd] text-[#344e41] border-5 border-[#588157] rounded-lg mb-5 text-xl"
+                    className="flex flex-col items-center justify-center w-full h-60 bg-[#dad7cd] text-[#344e41] rounded-lg mb-5 text-xl"
                 >
                     <div className="relative flex w-full h-4/6">
                         <div className="flex justify-center w-full mx-5">
@@ -82,7 +108,7 @@ const AddSteps: FC<AppProps> = ({steps, setSteps, stepCount, setStepCount, isIns
                                     name="stepField"
                                     onChange={checkIsStepValid}
                                     ref={newStepRef}
-                                    className="w-full h-30 text-black bg-white rounded-md text-lg px-3 border border-[#344e41] resize-none"
+                                    className="w-full h-30 text-black bg-white rounded-md text-lg px-3 resize-none"
                                 />
                             </label>
                         </div>

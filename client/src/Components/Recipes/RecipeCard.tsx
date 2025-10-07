@@ -30,6 +30,9 @@ const RecipeCard: FC<AppProps> = ({recipe}) => {
                             scaleX: [1, 0, 1],
                             transition: {duration: 0.5, ease: "easeOut"}
                         },
+                        entrance: {
+
+                        },
                         hover: {
                             scaleX: [1, 0, 1],
                             transition: {duration: 0.5, ease: "easeOut"}

@@ -1,5 +1,6 @@
 import { useRef, useState} from "react";
 import {faTrash} from "@fortawesome/free-solid-svg-icons/faTrash";
+import {motion} from "framer-motion";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import AddIngredients from "../../Components/AddRecipe/AddIngredients.js";
 import AddSteps from "../../Components/AddRecipe/AddSteps.js";
@@ -138,17 +139,32 @@ const AddRecipe = () => {
             className="relative flex flex-col justify-start items-center w-screen h-dvh bg-gradient-to-bl bg-[#a3b18a] overflow-x-hidden">
             <div className="relative w-4/6 h-[33rem] flex flex-col items-start m-20 text-[#344e41]">
                 <h1><strong>Create Recipe</strong></h1>
-                <form onSubmit={handleSubmit} className="flex flex-col w-full h-[98rem] pt-5 text-xl gap-y-3">
+                <form onSubmit={handleSubmit} className="flex flex-col w-full h-[98rem] pt-5 text-xl gap-y-4">
                     {/* title, prep_time, cook_time, description, picture */}
-                    <div className="flex w-full h-full bg-yellow-100 rounded-xl p-5">
+                    <motion.div
+                        className="flex w-full h-full bg-yellow-100 rounded-xl p-5 shadow-lg shadow-gray-900"
+                        initial={{
+                            opacity: 0,
+                            scale: 0.8,
+                            y: 100
+                        }}
+                        animate={{
+                            opacity: 1,
+                            scale: 1,
+                            y: 0
+                        }}
+                        transition={{
+                            duration: 0.3,
+                        }}
+                    >
                         {/* title, prep_time, cook_time, description */}
-                        <div className="flex flex-col w-1/2 h-full gap-y-3 pr-5">
+                        <div className="flex flex-col w-1/2 h-full pr-5 gap-y-2">
                             {/* title */}
                             <label
                                 className="relative flex flex-col items-start p-2"
                                 htmlFor="title"
                             >
-                                <strong>Title</strong>
+                                <p>Title</p>
                                 <input
                                     type="text"
                                     id="title"
@@ -156,7 +172,7 @@ const AddRecipe = () => {
                                     autoComplete="on"
                                     onChange={(e) => setTitle(e.target.value)}
                                     // onBlur={(e) => setIsTitleValid(validateTitle(e.target.value))}
-                                    className="w-full border-1 rounded-md bg-white p-1"
+                                    className="w-full rounded-md bg-white p-1"
                                 />
                                 {!isTitleValid &&
                                     <span
@@ -164,13 +180,13 @@ const AddRecipe = () => {
                                 }
                             </label>
                             {/* prep_time, cook_time */}
-                            <div className="flex w-full items-start p-2">
+                            <div className="flex w-full items-start px-2">
                                 {/* prep_time */}
                                 <label
                                     className="flex flex-col items-start"
                                     htmlFor="prep_time"
                                 >
-                                    <strong>Prep Time </strong>
+                                    <p>Prep Time </p>
                                     <div className="relative flex justify-start items-center">
                                         <input
                                             type="number"
@@ -178,9 +194,8 @@ const AddRecipe = () => {
                                             name="prep_time"
                                             autoComplete="on"
                                             onChange={(e) => setPrepTime(parseInt(e.target.value))}
-                                            // onBlur={(e) => setIsPrepTimeValid(validatePrepTime(e.target.value))}
-                                            className="w-1/4 border-1 rounded-md bg-white p-1"
-                                        /> &nbsp; mins
+                                            className="w-1/4 rounded-md bg-white p-1"
+                                        /> &nbsp; <span className="text-sm"><strong>mins</strong></span>
                                         {!isPrepTimeValid &&
                                             <span className="absolute text-red-600 text-sm bottom-[-1.4rem]">Must be more than 0</span>
                                         }
@@ -191,7 +206,7 @@ const AddRecipe = () => {
                                     className="flex flex-col items-start"
                                     htmlFor="prep_time"
                                 >
-                                    <strong>Cook Time</strong>
+                                    <p>Cook Time</p>
                                     <div className="relative flex justify-start items-center">
                                         <input
                                             type="number"
@@ -200,8 +215,8 @@ const AddRecipe = () => {
                                             autoComplete="on"
                                             onChange={(e) => setCookTime(parseInt(e.target.value))}
                                             // onBlur={(e) => setIsCookTimeValid(validateCookTime(e.target.value))}
-                                            className="w-1/4 border-1 rounded-md bg-white p-1"
-                                        /> &nbsp; mins
+                                            className="w-1/4 rounded-md bg-white p-1"
+                                        /> &nbsp; <span className="text-sm"><strong>mins</strong></span>
                                         {!isCookTimeValid &&
                                             <span className="absolute text-red-600 text-sm bottom-[-1.4rem]">Must be more than 0</span>
                                         }
@@ -214,14 +229,14 @@ const AddRecipe = () => {
                                 className="relative flex flex-col items-start p-2 h-full"
                                 htmlFor="description"
                             >
-                                <strong>Description</strong>
+                                <p>Description</p>
                                 <textarea
                                     id="description"
                                     name="description"
                                     autoComplete="on"
                                     onChange={(e) => setDescription(e.target.value)}
                                     // onBlur={(e) => setIsDescriptionValid(validateDescription(e.target.value))}
-                                    className="w-full h-48 border-1 rounded-md bg-white p-1 resize-none"
+                                    className="w-full h-48 rounded-md bg-white p-1 resize-none"
                                 />
                                 {!isDescriptionValid &&
                                     <span className="absolute text-red-600 text-sm bottom-[-1rem]">Cannot be empty<b></b></span>
@@ -236,9 +251,9 @@ const AddRecipe = () => {
                                 className="flex flex-col w-full h-full items-start"
                                 htmlFor="image"
                             >
-                                <strong>Image</strong>
+                                <p>Image</p>
                                 <div
-                                    className="relative flex justify-center w-full max-w-full h-full max-h-full bg-black overflow-hidden mb-5">
+                                    className="relative flex justify-center w-full max-w-full h-11/12 max-h-full bg-black overflow-hidden mb-5">
                                     <img
                                         className="object-cover"
                                         src="../../../public/assets/placeholderPic.png"
@@ -246,10 +261,10 @@ const AddRecipe = () => {
                                         alt=""
                                     />
                                 </div>
-                                <div className="flex w-full h-1/6 justify-start items-center gap-1">
+                                <div className="flex w-full h-1/12 justify-start items-center gap-2">
                                     <button
                                         type="button"
-                                        className="border bg-blue-400 w-3/12 text-white h-full p-1 rounded-md"
+                                        className="border bg-blue-400 w-3/12 text-white text-sm h-full p-1 rounded-md"
                                         onClick={() => picRef.current?.click()}
                                     >
                                         Upload
@@ -267,20 +282,23 @@ const AddRecipe = () => {
                                         id="picture"
                                         ref={picNameRef}
                                         name="picture"
-                                        className="w-7/12 h-full border-1 rounded-md bg-white p-1"
+                                        className="w-7/12 h-full rounded-md bg-white p-1 cursor-not-allowed"
                                         readOnly
                                     />
                                     <button
                                         type="button"
-                                        className="border bg-red-400 w-3/12 text-white h-full p-1 rounded-md"
+                                        className="relative flex justify-center items-center border bg-red-400 w-3/12 text-white h-full rounded-md"
                                         onClick={handleFileRemove}
                                     >
-                                        <FontAwesomeIcon icon={faTrash}/>
+                                        <FontAwesomeIcon
+                                            className="fa-xs"
+                                            icon={faTrash}
+                                        />
                                     </button>
                                 </div>
                             </label>
                         </div>
-                    </div>
+                    </motion.div>
                     <AddIngredients
                         ingredients={ingredients}
                         setIngredients={setIngredients}
@@ -295,7 +313,7 @@ const AddRecipe = () => {
                         setStepCount={setStepCount}
                         isInstructionsValid={isInstructionsValid}
                     />
-                    <div className="relative flex justify-end w-full bg-yellow-100 rounded-xl px-10 py-2 gap-5 mb-10">
+                    <div className="relative flex justify-end w-full bg-yellow-100 rounded-xl px-10 py-2 gap-5 mb-10 shadow-lg shadow-gray-900">
                         <button
                             type="button"
                             className="w-1/6 text-black h-15 p-1 rounded-md text-lg hover:underline"

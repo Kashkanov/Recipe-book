@@ -22,7 +22,7 @@ function App() {
                     <Route path="/" element={<AuthWrapper><Homepage/></AuthWrapper>}/>
                     <Route path="/Recipes" element={<AuthWrapper><Recipes/></AuthWrapper>}/>
                     <Route path="/Recipes/:id" element={<AuthWrapper><RecipePage/></AuthWrapper>}/>
-                    <Route path="/Recipes/add" element={<AuthWrapper><AddRecipe/></AuthWrapper>}/>
+                    <Route path="/Create" element={<AuthWrapper><AddRecipe/></AuthWrapper>}/>
                     <Route path="/Matchipe" element={<AuthWrapper><MatchPage/></AuthWrapper>}/>
 
                     <Route path="/login" element={<ReverseAuthWrapper><Login/></ReverseAuthWrapper>}/>
