@@ -9,8 +9,8 @@ import MatchPage from "./pages/Matchipe/MatchPage.js";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import {AuthProvider} from "./Contexts/AuthContext.js";
-import AuthWrapper from "./Wrappers/AuthWrapper.jsx";
-import ReverseAuthWrapper from "./Wrappers/ReverseAuthWrapper.jsx";
+import AuthWrapper from "./Wrappers/AuthWrapper.js";
+import ReverseAuthWrapper from "./Wrappers/ReverseAuthWrapper.js";
 
 function App() {
 

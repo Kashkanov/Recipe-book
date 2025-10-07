@@ -16,7 +16,8 @@ const AddIngredients: FC<AppProps> = ({ingredients, setIngredients, handleSubmit
 
     const handleAddIngredient = () => {
         setIngredients([...ingredients, currIngredient]);
-        ingRef.current?.value;
+        if(ingRef.current)
+            ingRef.current.value = "";
         setCurrIngredient("");
     }
 

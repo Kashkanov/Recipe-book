@@ -1,12 +1,17 @@
-import {useAuth} from "../Contexts/AuthContext.tsx";
+import {useAuth} from "../Contexts/AuthContext";
 import {Navigate} from "react-router-dom";
-import PropTypes from "prop-types";
+import type {FC} from "react";
+import LoadingPage from "../Components/Shared/LoadingPage";
 
-function AuthWrapper({children}) {
+type AppProps = {
+    children: React.ReactNode;
+}
+
+const AuthWrapper: FC<AppProps> = ({children}) => {
     const {user, loading} = useAuth();
 
     if (loading) {
-        return <div>Loading...</div>
+        return <LoadingPage/>
     }
     if (!user) {
         return <Navigate to="/login"/>
@@ -17,7 +22,3 @@ function AuthWrapper({children}) {
 }
 
 export default AuthWrapper;
-
-AuthWrapper.propTypes = {
-    children: PropTypes.node
-}

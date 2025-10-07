@@ -7,6 +7,7 @@ type AuthContextType = {
     checkAuth: () => Promise<void>;
     returnUrl: string;
     setReturnUrl: React.Dispatch<React.SetStateAction<string>>;
+    loading: boolean;
     login: (username: string, password: string) => Promise<boolean>;
     logout: () => void;
 }
@@ -70,13 +71,14 @@ export const AuthProvider: FC<AuthProviderProps> = ({children}) => {
     }
 
     const logout = () => {
+        setLoading(true);
         fetch(backend_url + "api/logout", {
             method: "GET",
             credentials: "include",
         }).then((res) => {
             if (res.ok) {
                 setUser(null);
-                setLoading(true);
+                setLoading(false);
             }
         }).catch((err) => {
             console.log(err);
@@ -93,6 +95,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({children}) => {
         checkAuth,
         returnUrl,
         setReturnUrl,
+        loading,
         login,
         logout
     }), [user, setUser, checkAuth, returnUrl, setReturnUrl, login, logout]);

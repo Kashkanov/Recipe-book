@@ -5,7 +5,7 @@
     "tags": [],
     "title": "Convert to TypeScript",
     "description": "Change JSX to TSX",
-    "status": "IN_PROGRESS",
+    "status": "DONE",
     "date": {
       "date": {
         "year": 2025,
@@ -41,7 +41,7 @@
     "tags": [],
     "title": "Reload issue",
     "description": "When page is reloaded, load actual page, not home",
-    "status": "TODO",
+    "status": "DONE",
     "date": {
       "date": {
         "year": 2025,
@@ -53,6 +53,19 @@
         "minute": 11,
         "second": 45,
         "nano": 329162300
+      }
+    },
+    "finishDate": {
+      "date": {
+        "year": 2025,
+        "month": 10,
+        "day": 7
+      },
+      "time": {
+        "hour": 10,
+        "minute": 6,
+        "second": 3,
+        "nano": 152841200
       }
     },
     "dueDate": {
@@ -98,7 +111,7 @@
     "tags": [],
     "title": "Animations polishing",
     "description": "",
-    "status": "TODO",
+    "status": "IN_PROGRESS",
     "date": {
       "date": {
         "year": 2025,
