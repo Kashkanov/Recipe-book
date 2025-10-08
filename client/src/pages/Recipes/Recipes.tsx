@@ -14,15 +14,36 @@ const Recipes = () => {
     const [recipes, setRecipes] = useState<recipe[]>();
     const [total, setTotal] = useState<number>(0);
     const page = parseInt(searchParams.get("page") ?? "1");
+    const search = searchParams.get("search") ?? ""
+    const [localSearch, setLocalSearch] = useState<string>("");
 
     async function AllRecipesAndCount() {
-        const response = await getAllRecipesAndCount(page);
+
+        // setSearchParams({search: localSearch, page: page.toString()});
+
+        const response = await getAllRecipesAndCount(page, localSearch);
         setRecipes(response.recipes);
         setTotal(response.total);
     }
 
     function handlePageChange(newPage: number) {
-        setSearchParams({page: newPage.toString()});
+        setSearchParams((prev) => {
+            const updated = new URLSearchParams(prev);
+            updated.set("page",newPage.toString())
+            return updated
+        });
+    }
+
+    function handleSearchInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+        console.log(e.target.value)     //<===
+        setLocalSearch(e.target.value);
+    }
+
+    function handleSearch() {
+        // setSearchParams({'search': searchInputValue, 'page': page.toString()})
+        // setLocalSearch(searchInputValue);
+        setSearchParams({search: localSearch, page: "1"});
+        AllRecipesAndCount();
     }
 
     useEffect(() => {
@@ -30,10 +51,15 @@ const Recipes = () => {
     }, [page]);
 
     return (
-        <div className="relative flex-col justify-center items-center w-screen h-dvh bg-gradient-to-bl bg-[#a3b18a] overflow-x-hidden">
+        <div
+            className="relative flex-col justify-center items-center w-screen h-dvh bg-gradient-to-bl bg-[#a3b18a] overflow-x-hidden">
             <div className="flex justify-center h-full w-full gap-y-3">
                 <div className="relative flex flex-col justify-center items-center w-1/4 h-full">
-                    <Search/>
+                    <Search
+                        localSearch={localSearch}
+                        handleSearchInputChange={handleSearchInputChange}
+                        handleSearch={handleSearch}
+                    />
                     <Filters/>
                 </div>
                 <div className="relative flex flex-col justify-start items-center w-3/4 h-full">
@@ -64,7 +90,9 @@ const Recipes = () => {
                 </div>
             </div>
             <div className="flex justify-end p-5 w-full bottom-0 right-0 mt-10 bg-[#588157]">
-                <Pagination total={total} handlePageChange={handlePageChange} currPage={page}/>
+                {total > 0 &&
+                    <Pagination total={total} handlePageChange={handlePageChange} currPage={page}/>
+                }
             </div>
 
         </div>

@@ -41,7 +41,7 @@ const RecipeCard: FC<AppProps> = ({recipe}) => {
                     scale: 1,
                     backgroundColor: "#344e41"
                 }}
-                whileHover="hover"
+                // whileHover="hover"
                 variants={{
                     hover : {
                         scale: 1.2,

@@ -1,7 +1,8 @@
 const api_url = import.meta.env.VITE_API_URL;
 
-export function getAllRecipesAndCount(page) {
-    return fetch(api_url + "recipes?page=" + page,
+export function getAllRecipesAndCount(page, search) {
+    console.log(`page ${page} + search: ${search}`);        //<===
+    return fetch(api_url + "recipes?page=" + page + "&search=" + search,
         {
             method: "GET",
             credentials: "include",

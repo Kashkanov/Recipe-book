@@ -111,7 +111,7 @@
     "tags": [],
     "title": "Animations polishing",
     "description": "",
-    "status": "IN_PROGRESS",
+    "status": "DONE",
     "date": {
       "date": {
         "year": 2025,
@@ -158,6 +158,28 @@
         "minute": 36,
         "second": 6,
         "nano": 437200900
+      }
+    },
+    "isImported": false
+  },
+  {
+    "id": "TASK_27",
+    "priority": "HIGH",
+    "tags": [],
+    "title": "Filter and Search Bar",
+    "description": "",
+    "status": "TODO",
+    "date": {
+      "date": {
+        "year": 2025,
+        "month": 10,
+        "day": 8
+      },
+      "time": {
+        "hour": 15,
+        "minute": 0,
+        "second": 7,
+        "nano": 528833700
       }
     },
     "isImported": false

@@ -21,15 +21,31 @@ const upload = multer({storage: storage});
 // Get all recipes
 router.get("/", authenticateToken, async (req, res) => {
     try{
-        const { page=1 } = req.query;
+        const page = req.query.page;
         const currPage = parseInt(page);
-        // get recipes by page
+        const search = req.query.search;
+        const escapedSearch = search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedSearch, 'i');
+        let query = {}
+
+        // if search is not empty, set conditions to search for recipes with names or conditions that contains it
+        if (search) {
+            query = {
+                $or: [
+                    { title: { $regex: regex } },
+                    { description: { $regex: regex } }
+                ]
+            }
+        }
+
         const recipes = await Recipe
-            .find()
+            .find(query)
             .skip((currPage - 1) * 8)
             .limit(8)
 
-        const totalRecipes = await Recipe.countDocuments();
+        console.log("Recipe found: ", recipes);
+
+        const totalRecipes = await Recipe.countDocuments(query);
         res.json({
             recipes: recipes,
             total: totalRecipes
