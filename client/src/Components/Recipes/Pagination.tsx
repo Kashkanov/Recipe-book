@@ -11,7 +11,7 @@ const Pagination: FC<AppProps> = ({total, handlePageChange, currPage}) => {
 
     const pageButtons = [];
     const start = Math.max(currPage - 3, 1);
-    const totalPages = Math.ceil(total / 6);
+    const totalPages = Math.ceil(total / 8);
 
     const end = Math.min(currPage + 1, totalPages - 2);
     const leftDotRef = useRef<HTMLButtonElement>(null);

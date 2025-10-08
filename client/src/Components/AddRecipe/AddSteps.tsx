@@ -49,7 +49,7 @@ const AddSteps: FC<AppProps> = ({steps, setSteps, stepCount, setStepCount, isIns
     return (
         <div className="flex flex-col w-full bg-yellow-100 rounded-xl p-5 shadow-lg shadow-gray-900">
             <div className="flex justify-start m-5">
-                <h2 className="text-4xl"><b>Steps</b></h2>
+                <h2 className="text-3xl"><b>Steps</b></h2>
             </div>
             <div className="relative flex flex-col w-full px-5 list-decimal">
                 <AnimatePresence>

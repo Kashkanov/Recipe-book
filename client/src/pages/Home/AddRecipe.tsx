@@ -137,7 +137,7 @@ const AddRecipe = () => {
     return (
         <div
             className="relative flex flex-col justify-start items-center w-screen h-dvh bg-gradient-to-bl bg-[#a3b18a] overflow-x-hidden">
-            <div className="relative w-4/6 h-[33rem] flex flex-col items-start m-20 text-[#344e41]">
+            <div className="relative w-3/6 h-[33rem] flex flex-col items-start m-20 text-[#344e41]">
                 <h1><strong>Create Recipe</strong></h1>
                 <form onSubmit={handleSubmit} className="flex flex-col w-full h-[98rem] pt-5 text-xl gap-y-4">
                     {/* title, prep_time, cook_time, description, picture */}

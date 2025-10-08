@@ -9,7 +9,7 @@ const Steps: FC<AppProps> = ({steps}) => {
 
     return (
         <div className="flex-col text-start bg-yellow-100 rounded-lg text-black p-5 ">
-            <h1 className="text-5xl font-bold pb-5">Instructions</h1>
+            <span className="text-2xl font-bold pb-5">Instructions</span>
             {steps &&
                 (
                     <div className="flex flex-col w-full gap-y-10">
@@ -17,7 +17,7 @@ const Steps: FC<AppProps> = ({steps}) => {
                             {steps.map((step, index) => {
                                 return (
                                     <motion.li key={index}
-                                               className="relative text-2xl items-center list-item py-5 px-2"
+                                               className="relative text-lg items-center list-item py-5 px-2"
                                                initial={{scale: 1}}
                                                whileHover={{
                                                    scale: 1.1,

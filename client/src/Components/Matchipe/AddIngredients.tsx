@@ -54,22 +54,24 @@ const AddIngredients: FC<AppProps> = ({ingredients, setIngredients, handleSubmit
                         ease: "easeIn",
                         bounce: 0,
                         duration: 1
-                        // type: "keyframes",
-                        // duration: 7,
-                        // times: [0, 5 / totalDuration, (5 + transitionDuration) / totalDuration, 7 / totalDuration, (7 + transitionDuration) / totalDuration],
-                        // repeat: 6,
-                        // ease: ["linear", "easeOut", "linear", "easeOut"],
+
                     }}
                 >
-                    <div className="flex flex-col h-5/6 bg-[#978D84] rounded-lg p-10 gap-y-8 shadow-md shadow-gray-600">
-                        <h1 className="text-black"><strong><i>Matchipe&#8482;</i></strong></h1>
-                        <p>
+                    <div className="flex flex-col h-5/6 bg-[#978D84] rounded-lg gap-y-2 shadow-md shadow-gray-600 overflow-hidden">
+                        <img
+                            className="h-1/2 w-full object-cover"
+                            src="../../../public/assets/matchipe_div.webp"
+                            alt="Matchipe_stock"
+                        />
+                        <span className="text-black text-4xl"><strong><i>Matchipe&#8482;</i></strong></span>
+                        <span className="px-10">
                             Have all the ingredients but don’t know what to make? Worry not! Matchipe™ is the solution
                             for
                             you!
                             All you have to do is type in all the
-                            ingredients available in you kitchen. <span className="text-green-400"><strong>Important: Make sure the spelling is correct.</strong></span>
-                        </p>
+                            ingredients available in you kitchen.
+                        </span>
+                        <span className="text-red-700"><strong>Important: Make sure the spelling is correct.</strong></span>
                         <div className="w-full h-1/12">
                             {!isValidIngredients &&
                                 <span className="text-red-400">Ingredients cannot be empty.</span>
@@ -78,7 +80,7 @@ const AddIngredients: FC<AppProps> = ({ingredients, setIngredients, handleSubmit
                     </div>
                     <button
                         type="submit"
-                        className="relative flex justify-center items-center h-1/6 w-full bg-[#588157] text-3xl py-3 px-5 shadow-lg shadow-gray-600"
+                        className="relative flex justify-center items-center h-1/6 w-full bg-[#588157] hover:bg-[#7CBF7C] text-3xl py-3 px-5 shadow-lg shadow-gray-600 cursor-pointer"
                     >
                         Match!
                     </button>

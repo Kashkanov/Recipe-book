@@ -24,11 +24,11 @@ const RecipePage = () => {
     }, []);
 
     return (
-        <motion.div
-            className="flex justify-center items-center h-full w-screen max-w-screen bg-[#A3B18A]"
+        <div
+            className="relative flex justify-center items-center h-full w-full bg-[#A3B18A]"
         >
             {recipe && (
-                <div className="w-5/6 pt-20">
+                <div className="w-4/6 pt-20">
                     <div className="flex flex-col justify-center w-full gap-3">
                         {/*Overview and pic section*/}
                         <div className="flex justify-center w-full gap-3 max-h-110">
@@ -83,7 +83,7 @@ const RecipePage = () => {
                 </div>
             )}
 
-        </motion.div>
+        </div>
     )
 }
 

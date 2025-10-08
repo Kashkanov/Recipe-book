@@ -26,8 +26,8 @@ router.get("/", authenticateToken, async (req, res) => {
         // get recipes by page
         const recipes = await Recipe
             .find()
-            .skip((currPage - 1) * 6)
-            .limit(6)
+            .skip((currPage - 1) * 8)
+            .limit(8)
 
         const totalRecipes = await Recipe.countDocuments();
         res.json({

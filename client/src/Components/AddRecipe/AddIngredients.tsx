@@ -86,7 +86,7 @@ const AddIngredients: FC<AppProps> = ({
             }}
         >
             <div className="flex justify-start m-5">
-                <h2 className="text-4xl"><b>Ingredients</b></h2>
+                <h2 className="text-3xl"><b>Ingredients</b></h2>
             </div>
             <div className="flex flex-col w-full px-5">
                 <AnimatePresence>
@@ -134,13 +134,12 @@ const AddIngredients: FC<AppProps> = ({
                         ))}
                 </AnimatePresence>
                 {/* Add new ingredient */}
-                <div
-                    className="flex flex-col items-center justify-center w-full h-50 bg-[#dad7cd] text-[#344e41] rounded-lg mb-5 text-xl">
+                <div className="flex flex-col items-center justify-center w-full h-50 bg-[#dad7cd] text-[#344e41] rounded-lg mb-5 text-xl">
                     <div ref={newIngredientRef} className="relative flex w-full h-4/6">
-                        <div className="flex justify-center w-2/12 ">
+                        <div className="flex justify-center w-2/12 px-2">
                             <label
                                 htmlFor="qtyField"
-                                className="flex flex-col justify-center items-center gap-y-2"
+                                className="flex flex-col justify-center items-center gap-y-2 w-full"
                             >
                                 <p>Quantity</p>
                                 <input
@@ -149,14 +148,14 @@ const AddIngredients: FC<AppProps> = ({
                                     name="qtyField"
                                     type="number"
                                     onChange={checkIsIngredientValid}
-                                    className="w-20 h-10 text-black bg-white rounded-md text-xl px-3"
+                                    className="w-full h-10 text-black bg-white rounded-md text-xl px-3"
                                 />
                             </label>
                         </div>
-                        <div className="flex justify-center w-4/12 ">
+                        <div className="flex justify-center w-4/12 px-2">
                             <label
                                 htmlFor="unitField"
-                                className="flex flex-col justify-center items-center gap-y-2 "
+                                className="flex flex-col justify-center items-center gap-y-2 w-full"
                             >
                                 <p>Unit</p>
                                 <input
@@ -164,14 +163,14 @@ const AddIngredients: FC<AppProps> = ({
                                     id="unitField"
                                     name="unitField"
                                     onChange={checkIsIngredientValid}
-                                    className="w-40 h-10 text-black bg-white rounded-md text-xl px-3"
+                                    className="w-full h-10 text-black bg-white rounded-md text-xl px-3"
                                 />
                             </label>
                         </div>
-                        <div className="flex justify-center w-6/12 ">
+                        <div className="relative flex justify-center w-6/12 px-2">
                             <label
                                 htmlFor="nameField"
-                                className="flex flex-col justify-center items-center gap-y-2 "
+                                className="flex flex-col justify-center items-center gap-y-2 w-full"
                             >
                                 <p>Name</p>
                                 <input
@@ -179,7 +178,7 @@ const AddIngredients: FC<AppProps> = ({
                                     id="nameField"
                                     name="nameField"
                                     onChange={checkIsIngredientValid}
-                                    className="w-100 h-10 text-black bg-white rounded-md text-xl px-3"
+                                    className="w-full h-10 text-black bg-white rounded-md text-xl px-3"
                                 />
                             </label>
                         </div>

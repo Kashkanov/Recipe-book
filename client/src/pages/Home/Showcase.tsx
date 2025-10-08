@@ -31,7 +31,7 @@ const Showcase = () => {
             <h1 className="mt-13 text-5xl text-[#344e41] font-bold py-5">Watcha cookin today?</h1>
             {sampRecipes.length > 0 &&
                 (
-                    <div className="w-5/6 h-3/4 flex overflow-x-hidden">
+                    <div className="w-full h-3/4 flex overflow-x-hidden px-10">
                         <motion.div
                             className="w-1/2 h-full p-3"
                             initial={{

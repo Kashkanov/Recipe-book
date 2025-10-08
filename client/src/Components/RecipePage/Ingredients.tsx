@@ -32,28 +32,31 @@ const Ingredients: FC<AppProps> = ({ingredients}) => {
             className="flex-col text-start bg-yellow-100 rounded-lg text-black p-5 w-full"
         >
             <div className="flex justify-between">
-                <h1 className="text-5xl font-bold pb-5">Ingredients</h1>
+                <span className="text-2xl font-bold pb-5">Ingredients</span>
                 {/* Servings adjust */}
-                <div className="relative flex items-center h-10 w-40 font-bold">
-                    <button
-                        onClick={() => setServings(servings - 1)}
-                        disabled={servings === 1}
-                        className="relative bg-white h-full w-1/6 rounded-tl-xl rounded-bl-xl border-3 border-black flex justify-center items-center"
-                    >
-                        <FontAwesomeIcon icon={faMinus}/>
-                    </button>
-                    <input
-                        type="number"
-                        className="flex h-full w-3/6 text-center bg-white border-b-3 border-t-3"
-                        value={servings}
-                        onChange={(e) => setServings(parseInt(e.target?.value))}
-                    />
-                    <button
-                        onClick={() => setServings(servings + 1)}
-                        className="relative bg-white h-full w-1/6 rounded-tr-xl rounded-br-xl border-3 border-black flex justify-center items-center"
-                    >
-                        <FontAwesomeIcon icon={faPlus}/>
-                    </button>
+                <div className="flex flex-col h-10 w-30 ">
+                    <div className="relative flex justify-center items-center h-1/2 w-full font-bold">
+                        <button
+                            onClick={() => setServings(servings - 1)}
+                            disabled={servings === 1}
+                            className="relative bg-gray-300 h-full w-1/6 rounded-tl-xl rounded-bl-xl flex justify-center items-center cursor-pointer"
+                        >
+                            <FontAwesomeIcon icon={faMinus}/>
+                        </button>
+                        <input
+                            type="number"
+                            className="flex h-full w-3/6 text-center bg-white "
+                            value={servings}
+                            onChange={(e) => setServings(parseInt(e.target?.value))}
+                        />
+                        <button
+                            onClick={() => setServings(servings + 1)}
+                            className="relative bg-gray-300 h-full w-1/6 rounded-tr-xl rounded-br-xl flex justify-center items-center cursor-pointer"
+                        >
+                            <FontAwesomeIcon icon={faPlus}/>
+                        </button>
+                    </div>
+                    <span className="text-center text-black w-full">Servings</span>
                 </div>
             </div>
             {ingredients &&
@@ -64,7 +67,7 @@ const Ingredients: FC<AppProps> = ({ingredients}) => {
                             return (
                                 <div
                                     key={index}
-                                    className="relative flex text-2xl items-center p-2"
+                                    className="relative flex text-lg items-center p-2"
                                 >
                                     <input
                                         type="checkbox"
