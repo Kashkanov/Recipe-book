@@ -53,7 +53,7 @@ router.get("/", authenticateToken, async (req, res) => {
     } catch (err) {
         res.status(500).json({message: err.message});
     }
-});
+})
 
 // Get latest recipe
 router.get("/latest/", authenticateToken,async (req, res) => {

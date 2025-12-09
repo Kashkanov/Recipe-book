@@ -57,7 +57,8 @@ const AddIngredients: FC<AppProps> = ({ingredients, setIngredients, handleSubmit
 
                     }}
                 >
-                    <div className="flex flex-col h-5/6 bg-[#978D84] rounded-lg gap-y-2 shadow-md shadow-gray-600 overflow-hidden">
+                    <div
+                        className="flex flex-col h-5/6 bg-[#978D84] rounded-lg gap-y-2 shadow-md shadow-gray-600 overflow-hidden">
                         <img
                             className="h-1/2 w-full object-cover"
                             src="../../../public/assets/matchipe_div.webp"
@@ -71,7 +72,8 @@ const AddIngredients: FC<AppProps> = ({ingredients, setIngredients, handleSubmit
                             All you have to do is type in all the
                             ingredients available in you kitchen.
                         </span>
-                        <span className="text-red-700"><strong>Important: Make sure the spelling is correct.</strong></span>
+                        <span
+                            className="text-red-700"><strong>Important: Make sure the spelling is correct.</strong></span>
                         <div className="w-full h-1/12">
                             {!isValidIngredients &&
                                 <span className="text-red-400">Ingredients cannot be empty.</span>
